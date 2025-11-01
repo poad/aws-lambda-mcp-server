@@ -1,0 +1,127 @@
+name: Automatic release
+on:
+  pull_request:
+    branches:
+      - main
+    types:
+      - closed
+
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  id-token: write  # OIDC
+  pull-requests: write  # PR comment
+
+jobs:
+  release:
+    if: |
+      (github.event.pull_request.merged == true && contains(github.event.pull_request.labels.*.name, 'Type: Release')) || github.event_name == 'workflow_dispatch'
+    permissions:
+      contents: write
+      id-token: write  # OIDC
+      pull-requests: write  # PR comment
+
+    name: check version, add tag and release
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          persist-credentials: false
+
+      - name: Setup Node
+        uses: actions/setup-node@2028fbc5c25fe9cf00d9f06a71cc4710d4507903 # v6.0.0
+        with:
+          node-version: 'lts/*'
+          registry-url: 'https://registry.npmjs.org'
+          scope       : 'aws-lambda-mcp-server'
+          package-manager-cache: false
+
+      - name: Can Publish
+        run : npx can-npm-publish --verbose
+        working-directory: package
+
+      - name: Get package info
+        id: package
+        run: |
+          VERSION=$(jq -r '.version' package.json)
+          PACKAGE_NAME=$(jq -r '.name' package.json)
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "name=$PACKAGE_NAME" >> $GITHUB_OUTPUT
+
+      - name: Install latest npm
+        run: |
+          echo "Current npm version: $(npm -v)"
+          npm install -g npm@latest
+          echo "Updated npm version: $(npm -v)"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@41ff72655975bd51cab0327fa583b6e92b6d3061 # v4.2.0
+        with:
+          run_install: |
+            - recursive: true
+              args: [--no-frozen-lockfile]
+
+      - name: Build
+        run : pnpm build
+        working-directory: package
+
+      - name: Publish
+        run : pnpm -r publish --no-git-checks --access public --provenance
+        working-directory: package
+
+      - name: Create GitHub Release with tag
+        id: create-release
+        run: |
+          RELEASE_URL=$(gh release create "v$VERSION" \
+            --title "v$VERSION" \
+            --target "$SHA" \
+            --notes "$PR_BODY")
+          echo "url=$RELEASE_URL" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.package.outputs.version }}
+          SHA: ${{ github.sha }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+      
+      - name: Comment on PR - Success
+        if: |
+          always() && 
+          github.event_name == 'pull_request' && 
+          success()
+        run: |
+          gh pr comment "$PR_NUMBER" \
+            --body "✅ **Release v$VERSION completed successfully!**
+          
+          - 📦 npm package: https://www.npmjs.com/package/$PACKAGE_NAME/v/$VERSION
+          - 🏷️ GitHub Release: $RELEASE_URL
+          - 🔗 Workflow run: $SERVER_URL/$REPOSITORY/actions/runs/$RUN_ID"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          VERSION: ${{ steps.package.outputs.version }}
+          PACKAGE_NAME: ${{ steps.package.outputs.name }}
+          RELEASE_URL: ${{ steps.create-release.outputs.url }}
+          SERVER_URL: ${{ github.server_url }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}
+      
+      - name: Comment on PR - Failure
+        if: |
+          always() && 
+          github.event_name == 'pull_request' && 
+          failure()
+        run: |
+          gh pr comment "$PR_NUMBER" \
+            --body "❌ **Release v$VERSION failed**
+          
+          Please check the workflow logs for details.
+          🔗 Workflow run: $SERVER_URL/$REPOSITORY/actions/runs/$RUN_ID"
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+          VERSION: ${{ steps.package.outputs.version }}
+          SERVER_URL: ${{ github.server_url }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_ID: ${{ github.run_id }}

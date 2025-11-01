@@ -1,0 +1,18 @@
+{
+  "name": "@aws-lambda-mcp-server/root",
+  "description": "",
+  "type": "module",
+  "scripts": {
+    "build": "pnpm run --if-present --recursive --parallel build",
+    "test": "pnpm run --if-present --recursive --parallel test",
+    "lint": "pnpm run --if-present --recursive --parallel lint",
+    "lint-fix": "pnpm run --if-present --recursive --parallel lint-fix"
+  },
+  "keywords": ["mcp-server", "modelcontextprotocol", "mcp", "lambda"],
+  "author": "poad",
+  "license": "ISC",
+  "packageManager": "pnpm@10.20.0",
+  "devDependencies": {
+    "pnpm": "^10.20.0"
+  }
+}
