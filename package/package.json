@@ -1,0 +1,59 @@
+{
+  "name": "aws-lambda-mcp-server",
+  "version": "0.0.0",
+  "description": "A Hono wrapper for building an MCP (Model Context Protocol) Server that runs on AWS Lambda functions.",
+  "type": "module",
+  "keywords": [
+    "mcp-server",
+    "modelcontextprotocol",
+    "mcp",
+    "lambda"
+  ],
+  "private": false,
+  "sideEffects": false,
+  "homepage": "https://github.com/poad/aws-lambda-mcp-server#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poad/aws-lambda-mcp-server.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "module": "./dist/index.js",
+  "types": "dist/index.d.ts",
+  "main": "./dist/index.js",
+  "author": "poad",
+  "license": "ISC",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "vitest run --passWithNoTests",
+    "lint": "eslint .",
+    "lint-fix": "eslint . --fix"
+  },
+  "devDependencies": {
+    "@eslint/compat": "^1.4.1",
+    "@eslint/js": "^9.39.0",
+    "@stylistic/eslint-plugin": "^5.5.0",
+    "@types/node": "24.9.2",
+    "eslint": "^9.39.0",
+    "eslint-import-resolver-typescript": "^4.4.4",
+    "eslint-plugin-import": "^2.32.0",
+    "eslint-plugin-promise": "^7.2.1",
+    "jiti": "^2.6.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2",
+    "vitest": "^4.0.6"
+  },
+  "dependencies": {
+    "@aws-lambda-powertools/logger": "^2.28.1",
+    "@hono/mcp": "^0.1.5",
+    "@modelcontextprotocol/sdk": "^1.20.2",
+    "hono": "^4.10.4",
+    "zod": "^3.25.76"
+  }
+}
