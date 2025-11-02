@@ -44,6 +44,7 @@ jobs:
 
       - name: Get package info
         id: package
+        working-directory: package
         run: |
           VERSION=$(jq -r '.version' package.json)
           PACKAGE_NAME=$(jq -r '.name' package.json)
@@ -68,8 +69,8 @@ jobs:
         working-directory: package
 
       - name: Publish
-        run : pnpm -r publish --no-git-checks --access public --provenance
         working-directory: package
+        run : pnpm publish --access public --provenance
 
       - name: Create GitHub Release with tag
         id: create-release
