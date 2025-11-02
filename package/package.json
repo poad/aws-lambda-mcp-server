@@ -13,6 +13,7 @@
   "sideEffects": false,
   "files": [
     "dist",
+    "package.json",
     "README.md"
   ],
   "homepage": "https://github.com/poad/aws-lambda-mcp-server#readme",
