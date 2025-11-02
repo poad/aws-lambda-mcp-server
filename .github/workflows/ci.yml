@@ -28,11 +28,11 @@ jobs:
           - recursive: true
             args: [--no-frozen-lockfile]
 
-    - name: Lint
-      run: pnpm run --if-present --recursive --parallel lint
-
     - name: Test
       run: pnpm run --if-present --recursive --parallel test
 
     - name: Build
       run: pnpm run --if-present --recursive --parallel build
+
+    - name: Lint
+      run: pnpm run --if-present --recursive --parallel lint

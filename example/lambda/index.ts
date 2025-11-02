@@ -2,7 +2,6 @@ import { Logger } from '@aws-lambda-powertools/logger';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { handle } from 'hono/aws-lambda';
 import { z } from 'zod';
-// eslint-disable-next-line import/no-unresolved
 import { createHonoApp } from 'aws-lambda-mcp-server';
 
 const logger = new Logger();
