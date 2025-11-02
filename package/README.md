@@ -1,5 +1,7 @@
 # aws-lambda-mcp-server
 
+[![npm version](https://badge.fury.io/js/aws-lambda-mcp-server.svg)](https://badge.fury.io/js/aws-lambda-mcp-server)
+
 AWS Lambda上でMCP（Model Context Protocol）サーバー機能を提供するためのライブラリです。
 APIエンドポイントの実装や、各種AWSサービスとの連携を簡易化することを目的としています。
 
