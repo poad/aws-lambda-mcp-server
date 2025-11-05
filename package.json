@@ -1,7 +1,7 @@
 {
   "name": "@aws-lambda-mcp-server/root",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A Hono wrapper for building an MCP (Model Context Protocol) Server that runs on AWS Lambda functions.",
   "type": "module",
   "scripts": {
