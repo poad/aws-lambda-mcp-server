@@ -119,32 +119,36 @@ const closeResources = async (server: McpServer, transport: StreamableHTTPTransp
  * @remarks
  * サーバーとトランスポートの接続・リクエスト処理・エラーハンドリングを行います。
  *
- * @param server MCPサーバーインスタンス
+ * @param createMcpServer MCPサーバーインスタンスを生成するファクトリ関数
  * @param c Honoのコンテキスト
  * @returns MCPレスポンス
  * @private
  */
-const handleRequest = async (server: McpServer, c: Context<BlankEnv, '/mcp', BlankInput>) => {
+const handleRequest = async (createMcpServer: () => McpServer, c: Context<BlankEnv, '/mcp', BlankInput>) => {
   const transport = new StreamableHTTPTransport({
     sessionIdGenerator: undefined, // セッションIDを生成しない（ステートレスモード）
     enableJsonResponse: true,
   });
+  const server = createMcpServer();
   try {
     await server.connect(transport);
     logger.trace('MCP リクエストを受信');
     return await transport.handleRequest(c);
   } catch (error) {
+    return handleError(c, error, 'MCP 接続中のエラー:');
+  } finally {
+    // エラーの有無に関わらず必ずリソースをクローズ
     try {
       await closeResources(server, transport);
     } catch (closeError) {
+      // クローズエラーは既にcloseResources内でログ出力されているため、
+      // ここでは追加のエラーハンドリングは不要だが、エラーの詳細を記録
       const errorDetails = closeError instanceof Error
         ? { message: closeError.message, stack: closeError.stack }
         : closeError;
-      logger.error('Transport close failed after connection error:', { closeError: errorDetails });
+      logger.error('リソースクローズ中に追加エラーが発生しましたが、処理を継続します', { closeError: errorDetails });
     }
-    return handleError(c, error, 'MCP 接続中のエラー:');
   }
-
 };
 
 /**
@@ -167,22 +171,11 @@ export const createHonoApp = (createMcpServer: () => McpServer) => {
   const app = new Hono();
 
   app.post('/mcp', async (c) => {
-    const server = createMcpServer();
-
-    try {
-      return await handleRequest(server, c);
-    } finally {
-      await server.close();
-    }
+    return await handleRequest(createMcpServer, c);
   });
 
   app.get('/mcp', async (c) => {
-    const server = createMcpServer();
-    try {
-      return await handleRequest(server, c);
-    } finally {
-      await server.close();
-    }
+    return await handleRequest(createMcpServer, c);
   });
 
   app.put('/mcp', methodNotAllowedHandler);

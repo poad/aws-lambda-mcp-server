@@ -6,23 +6,25 @@ import { createHonoApp } from 'aws-lambda-mcp-server';
 
 const logger = new Logger();
 
-const server = new McpServer({
-  name: 'hello-server',
-  version: '1.0.0',
-});
+const createMcpServer = () => {
+  const server = new McpServer({
+    name: 'hello-server',
+    version: '1.0.0',
+  });
 
-server.tool(
-  'say_hello',
-  { who: z.string() },
-  async ({ who }) => ({
-    content: [{
-      type: 'text',
-      text: `${who} さん、こんにちは！`,
-    }],
-  }),
-);
-
-const app = createHonoApp(server);
+  server.tool(
+    'say_hello',
+    { who: z.string() },
+    async ({ who }) => ({
+      content: [{
+        type: 'text',
+        text: `${who} さん、こんにちは！`,
+      }],
+    }),
+  );
+  return server;
+};
+const app = createHonoApp(createMcpServer);
 
 // Lambda handler
 export const handler = handle(app);
