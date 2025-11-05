@@ -1,19 +1,32 @@
-# Security Policy
+# セキュリティポリシー
 
-## Supported Versions
+## サポート対象バージョン
 
-This project is currently in active development (version 0.x.x). Security updates are provided for the latest version only. As this is an AWS Bedrock application, we prioritize security issues related to AWS credentials, data handling, and API interactions.
+本プロジェクト（aws-lambda-mcp-server）は現在アクティブに開発されています。  
+セキュリティアップデートは最新版（0.x.x系）のみ提供しています。
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 0.x.x   | :white_check_mark: |
+| バージョン | サポート状況         |
+| ---------- | ------------------- |
+| 0.x.x      | ✅                  |
 
-## Reporting a Vulnerability
+## セキュリティに関するご注意
 
-Please report security vulnerabilities through GitHub's Security Advisories feature:
+- 本リポジトリは AWS Lambda 上で動作する MCP（Model Context Protocol）サーバー用ライブラリです。
+- APIキー、シークレット、パスワード等のハードコーディングは禁止です。開発時は `.env` ファイル（.gitignore対象）、本番では環境変数や AWS Secrets Manager / Parameter Store をご利用ください。
+- 依存パッケージの脆弱性は `pnpm audit` や dependabot で定期的にチェックし、脆弱性が報告された場合は速やかにアップデートしてください。
+- CI/CD では静的解析（SAST）や依存性チェックを自動実行しています。
+- 外部から受け取るデータは型チェック・バリデーション（zod等）を必ず行ってください。
+- ログやエラーメッセージに認証情報・個人情報・シークレット等を出力しないでください。
+- クライアントへ返すデータは適切にエスケープし、XSS等の攻撃を防止してください。
+- IAMロール・ポリシーは最小権限の原則で設計してください。
+- セキュリティ上の懸念やインシデントが発生した場合は、速やかにご報告ください。
 
-1. Go to the Security tab of this repository
-2. Click "Report a vulnerability"
-3. Fill out the private vulnerability report form
+## 脆弱性の報告方法
 
-We will respond to security reports within 48 hours and provide regular updates on the remediation process.
+脆弱性を発見された場合は、GitHub の Security Advisories 機能を利用してご報告ください。
+
+1. このリポジトリの「セキュリティ」タブに移動
+2. 「脆弱性の報告」をクリック
+3. フォームに詳細を記入し、送信
+
+ご報告いただいた内容には48時間以内に初回対応し、修正状況について随時ご連絡いたします。

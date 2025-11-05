@@ -21,29 +21,33 @@ TypeScriptでの利用例です。
 
 ```typescript
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { handler } from 'aws-lambda-mcp-server';
+import { createHonoApp } from 'aws-lambda-mcp-server';
 import { handle } from 'hono/aws-lambda';
+import { z } from 'zod';
 
-// MCPサーバーのインスタンスを作成
-const server = new McpServer({
-  name: 'my-mcp-server',
-  version: '1.0.0',
-});
+// MCPサーバーのファクトリ関数を用意
+const createMcpServer = () => {
+  const server = new McpServer({
+    name: 'my-mcp-server',
+    version: '1.0.0',
+  });
 
-// MCPサーバーのインスタンスにToolsやResourcesなどを設定する
-server.tool(
-  "say_hello",
-  { who: z.string() },
-  async ({ who }) => ({
-    content: [{
-      type: "text",
-      text: `${who} さん、こんにちは！`
-    }]
-  })
-);
+  // MCPサーバーのインスタンスにToolsやResourcesなどを設定する
+  server.tool(
+    'say_hello',
+    { who: z.string() },
+    async ({ who }) => ({
+      content: [{
+        type: 'text',
+        text: `${who} さん、こんにちは！`
+      }]
+    })
+  );
+  return server;
+};
 
 // Hono アプリケーションを作成
-const app = createHonoApp(server);
+const app = createHonoApp(createMcpServer);
 
 // AWS Lambdaのエントリポイントとして利用
 export const handler = handle(app);
