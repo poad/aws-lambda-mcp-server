@@ -168,12 +168,21 @@ export const createHonoApp = (createMcpServer: () => McpServer) => {
 
   app.post('/mcp', async (c) => {
     const server = createMcpServer();
-    return await handleRequest(server, c);
+
+    try {
+      return await handleRequest(server, c);
+    } finally {
+      await server.close();
+    }
   });
 
   app.get('/mcp', async (c) => {
     const server = createMcpServer();
-    return await handleRequest(server, c);
+    try {
+      return await handleRequest(server, c);
+    } finally {
+      await server.close();
+    }
   });
 
   app.put('/mcp', methodNotAllowedHandler);
