@@ -1,11 +1,37 @@
+/**
+ * Model Context Protocol (MCP) サーバーを Hono フレームワーク上で動作させるエントリーポイント。
+ *
+ * @remarks
+ * `createHonoApp` 関数を通じて、/mcp エンドポイントでMCPサーバーを提供します。
+ * - POST/GET /mcp: MCPリクエストの受信・処理
+ * - その他のHTTPメソッド: 405 Method Not Allowed
+ *
+ * 内部的にエラーハンドリングやリソースクローズ処理も行います。
+ */
+
 import { Logger } from '@aws-lambda-powertools/logger';
 import { StreamableHTTPTransport } from '@hono/mcp';
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { Context, Hono } from 'hono';
 import { BlankEnv, BlankInput } from 'hono/types';
 
+/**
+ * ロガーインスタンス（AWS Lambda Powertools）。
+ *
+ * @private
+ */
 const logger = new Logger();
 
+/**
+ * 許可されていないHTTPメソッドに対するハンドラーです。
+ *
+ * @remarks
+ * 405エラーのJSONレスポンスを返します。
+ *
+ * @param c Honoのコンテキスト
+ * @returns 405エラーのJSONレスポンス
+ * @private
+ */
 const methodNotAllowedHandler = async (
   c: Context<BlankEnv, '/mcp', BlankInput>,
 ) => {
@@ -22,6 +48,18 @@ const methodNotAllowedHandler = async (
   );
 };
 
+/**
+ * サーバーエラー発生時の共通エラーハンドラーです。
+ *
+ * @remarks
+ * エラー内容をロギングし、500エラーのJSONレスポンスを返します。
+ *
+ * @param c Honoのコンテキスト
+ * @param reason エラー理由
+ * @param logMessage ログ出力用メッセージ
+ * @returns 500エラーのJSONレスポンス
+ * @private
+ */
 const handleError = (
   c: Context<BlankEnv, '/mcp', BlankInput>,
   reason: unknown,
@@ -44,6 +82,17 @@ const handleError = (
   );
 };
 
+/**
+ * MCPサーバーおよびトランスポートのリソースをクローズします。
+ *
+ * @remarks
+ * どちらか一方のクローズに失敗しても、もう一方は必ず実行されます。
+ *
+ * @param server MCPサーバーインスタンス
+ * @param transport トランスポートインスタンス
+ * @returns void
+ * @private
+ */
 const closeResources = async (server: McpServer, transport: StreamableHTTPTransport) => {
   // 両方のクローズを確実に実行（片方が失敗してももう片方を実行）
   const closeResults = await Promise.allSettled([
@@ -64,6 +113,17 @@ const closeResources = async (server: McpServer, transport: StreamableHTTPTransp
   });
 };
 
+/**
+ * MCPリクエストを処理します。
+ *
+ * @remarks
+ * サーバーとトランスポートの接続・リクエスト処理・エラーハンドリングを行います。
+ *
+ * @param server MCPサーバーインスタンス
+ * @param c Honoのコンテキスト
+ * @returns MCPレスポンス
+ * @private
+ */
 const handleRequest = async (server: McpServer, c: Context<BlankEnv, '/mcp', BlankInput>) => {
   const transport = new StreamableHTTPTransport({
     sessionIdGenerator: undefined, // セッションIDを生成しない（ステートレスモード）
@@ -87,14 +147,32 @@ const handleRequest = async (server: McpServer, c: Context<BlankEnv, '/mcp', Bla
 
 };
 
-export const createHonoApp = (server: McpServer) => {
+/**
+ * Honoアプリケーションを生成し、/mcpエンドポイントでMCPサーバーを提供します。
+ *
+ * @remarks
+ * POST/GET /mcp でMCPリクエストを受け付け、他のHTTPメソッドは405を返します。
+ *
+ * @param createMcpServer MCPサーバーインスタンスを生成するファクトリ関数
+ * @returns Honoアプリケーションインスタンス
+ *
+ * @example
+ * ```ts
+ * import { createHonoApp } from '...';
+ * import { createMcpServer } from './your-mcp-server';
+ * const app = createHonoApp(createMcpServer);
+ * ```
+ */
+export const createHonoApp = (createMcpServer: () => McpServer) => {
   const app = new Hono();
 
   app.post('/mcp', async (c) => {
+    const server = createMcpServer();
     return await handleRequest(server, c);
   });
 
   app.get('/mcp', async (c) => {
+    const server = createMcpServer();
     return await handleRequest(server, c);
   });
 
