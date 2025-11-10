@@ -18,8 +18,8 @@
   ],
   "author": "poad",
   "license": "ISC",
-  "packageManager": "pnpm@10.20.0",
+  "packageManager": "pnpm@10.21.0",
   "devDependencies": {
-    "pnpm": "^10.20.0"
+    "pnpm": "^10.21.0"
   }
 }
