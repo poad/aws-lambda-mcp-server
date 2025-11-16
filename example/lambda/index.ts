@@ -12,9 +12,12 @@ const createMcpServer = () => {
     version: '1.0.0',
   });
 
-  server.tool(
+  server.registerTool(
     'say_hello',
-    { who: z.string() },
+    {
+      description: 'Greets the user with a friendly message.',
+      inputSchema: { who: z.string() },
+    },
     async ({ who }) => ({
       content: [{
         type: 'text',
