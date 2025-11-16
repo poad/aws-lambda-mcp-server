@@ -17,14 +17,14 @@
     "lint-fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@eslint/compat": "^1.4.1",
+    "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.1",
     "@hono/mcp": "^0.1.5",
     "@hono/node-server": "^1.19.6",
     "@stylistic/eslint-plugin": "^5.5.0",
     "@types/aws-lambda": "^8.10.158",
     "@types/node": "^24.10.1",
-    "@vitest/coverage-v8": "^4.0.8",
+    "@vitest/coverage-v8": "^4.0.9",
     "aws-cdk": "^2.1031.2",
     "esbuild": "^0.27.0",
     "eslint": "^9.39.1",
@@ -37,15 +37,15 @@
     "typescript": "^5.9.3",
     "typescript-eslint": "^8.46.4",
     "vite-tsconfig-paths": "^5.1.4",
-    "vitest": "^4.0.8"
+    "vitest": "^4.0.9"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.28.1",
-    "@modelcontextprotocol/sdk": "^1.21.1",
-    "aws-cdk-lib": "^2.223.0",
+    "@modelcontextprotocol/sdk": "^1.22.0",
+    "aws-cdk-lib": "^2.224.0",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "^10.4.3",
-    "hono": "^4.10.5",
-    "zod": "^4.1.12"
+    "hono": "^4.10.6",
+    "zod": "^3.25.76"
   }
 }
