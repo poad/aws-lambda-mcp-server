@@ -18,7 +18,7 @@ const createMcpServer = () => {
       description: 'Greets the user with a friendly message.',
       inputSchema: { who: z.string() },
     },
-    async ({ who }) => ({
+    async ({ who }: { who: string }) => ({
       content: [{
         type: 'text',
         text: `${who} さん、こんにちは！`,
