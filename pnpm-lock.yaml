@@ -115,7 +115,7 @@ importers:
         specifier: ^4.10.6
         version: 4.10.6
       zod:
-        specifier: ^4.1.13
+        specifier: ^3.25 || ^4.0
         version: 4.1.13
     devDependencies:
       '@eslint/compat':
