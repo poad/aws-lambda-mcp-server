@@ -68,6 +68,10 @@ jobs:
         run : pnpm build
         working-directory: package
 
+      - name: Git status
+        run : git status
+        working-directory: package
+
       - name: Publish
         working-directory: package
         run : pnpm publish --access public --provenance
