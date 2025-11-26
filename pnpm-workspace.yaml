@@ -3,7 +3,3 @@ packages:
   - 'example'
 
 publishBranch: main
-
-overrides:
-  # TODO: @modelcontextprotocol/sdk が zod v4 対応するまでは v3 を使用する
-  'zod@>=4': '^3.25.76'
