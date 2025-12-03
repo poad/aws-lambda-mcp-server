@@ -18,8 +18,8 @@ importers:
         specifier: ^2.29.0
         version: 2.29.0
       '@modelcontextprotocol/sdk':
-        specifier: ^1.24.0
-        version: 1.24.0(zod@4.1.13)
+        specifier: ^1.24.2
+        version: 1.24.2(zod@4.1.13)
       aws-cdk-lib:
         specifier: ^2.231.0
         version: 2.231.0(constructs@10.4.3)
@@ -44,7 +44,7 @@ importers:
         version: 9.39.1
       '@hono/mcp':
         specifier: ^0.2.0
-        version: 0.2.0(@modelcontextprotocol/sdk@1.24.0(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)
+        version: 0.2.0(@modelcontextprotocol/sdk@1.24.2(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)
       '@hono/node-server':
         specifier: ^1.19.6
         version: 1.19.6(hono@4.10.7)
@@ -107,10 +107,10 @@ importers:
         version: 2.29.0
       '@hono/mcp':
         specifier: ^0.2.0
-        version: 0.2.0(@modelcontextprotocol/sdk@1.24.0(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)
+        version: 0.2.0(@modelcontextprotocol/sdk@1.24.2(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)
       '@modelcontextprotocol/sdk':
-        specifier: ^1.24.0
-        version: 1.24.0(zod@4.1.13)
+        specifier: ^1.24.2
+        version: 1.24.2(zod@4.1.13)
       hono:
         specifier: ^4.10.7
         version: 4.10.7
@@ -623,8 +623,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@modelcontextprotocol/sdk@1.24.0':
-    resolution: {integrity: sha512-D8h5KXY2vHFW8zTuxn2vuZGN0HGrQ5No6LkHwlEA9trVgNdPL3TF1dSqKA7Dny6BbBYKSW/rOBDXdC8KJAjUCg==}
+  '@modelcontextprotocol/sdk@1.24.2':
+    resolution: {integrity: sha512-hS/kzSfchqzvUeJUsdiDHi84/kNhLIZaZ6coGQVwbYIelOBbcAwUohUfaQTLa1MvFOK/jbTnGFzraHSFwB7pjQ==}
     engines: {node: '>=18'}
     peerDependencies:
       '@cfworker/json-schema': ^4.1.1
@@ -2581,9 +2581,9 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@hono/mcp@0.2.0(@modelcontextprotocol/sdk@1.24.0(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)':
+  '@hono/mcp@0.2.0(@modelcontextprotocol/sdk@1.24.2(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.24.0(zod@4.1.13)
+      '@modelcontextprotocol/sdk': 1.24.2(zod@4.1.13)
       hono: 4.10.7
       hono-rate-limiter: 0.4.2(hono@4.10.7)
       pkce-challenge: 5.0.1
@@ -2612,7 +2612,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@modelcontextprotocol/sdk@1.24.0(zod@4.1.13)':
+  '@modelcontextprotocol/sdk@1.24.2(zod@4.1.13)':
     dependencies:
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
