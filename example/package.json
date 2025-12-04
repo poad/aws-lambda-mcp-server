@@ -26,7 +26,7 @@
     "@types/node": "^24.10.1",
     "@vitest/coverage-v8": "^4.0.15",
     "aws-cdk": "^2.1033.0",
-    "esbuild": "^0.27.0",
+    "esbuild": "^0.27.1",
     "eslint": "^9.39.1",
     "eslint-import-resolver-typescript": "^4.4.4",
     "eslint-plugin-import": "^2.32.0",
@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "^2.29.0",
-    "@modelcontextprotocol/sdk": "^1.24.2",
+    "@modelcontextprotocol/sdk": "^1.24.3",
     "aws-cdk-lib": "^2.231.0",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "^10.4.3",
