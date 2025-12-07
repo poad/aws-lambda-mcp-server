@@ -19,7 +19,7 @@
   "devDependencies": {
     "@eslint/compat": "^2.0.0",
     "@eslint/js": "^9.39.1",
-    "@hono/mcp": "^0.2.1",
+    "@hono/mcp": "^0.2.2",
     "@hono/node-server": "^1.19.6",
     "@stylistic/eslint-plugin": "^5.6.1",
     "@types/aws-lambda": "^8.10.159",

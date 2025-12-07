@@ -43,8 +43,8 @@ importers:
         specifier: ^9.39.1
         version: 9.39.1
       '@hono/mcp':
-        specifier: ^0.2.1
-        version: 0.2.1(@modelcontextprotocol/sdk@1.24.3(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)(zod@4.1.13)
+        specifier: ^0.2.2
+        version: 0.2.2(@modelcontextprotocol/sdk@1.24.3(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)(zod@4.1.13)
       '@hono/node-server':
         specifier: ^1.19.6
         version: 1.19.6(hono@4.10.7)
@@ -106,8 +106,8 @@ importers:
         specifier: ^2.29.0
         version: 2.29.0
       '@hono/mcp':
-        specifier: ^0.2.1
-        version: 0.2.1(@modelcontextprotocol/sdk@1.24.3(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)(zod@4.1.13)
+        specifier: ^0.2.2
+        version: 0.2.2(@modelcontextprotocol/sdk@1.24.3(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)(zod@4.1.13)
       '@modelcontextprotocol/sdk':
         specifier: ^1.24.3
         version: 1.24.3(zod@4.1.13)
@@ -584,8 +584,8 @@ packages:
     resolution: {integrity: sha512-43/qtrDUokr7LJqoF2c3+RInu/t4zfrpYdoSDfYyhg52rwLV6TnOvdG4fXm7IkSB3wErkcmJS9iEhjVtOSEjjA==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
 
-  '@hono/mcp@0.2.1':
-    resolution: {integrity: sha512-2h++bwfLw80M1D5qudnT7VfXGlL+N2JH+X1rrn5axIQXvkININcsyMd1ifdrUlJGgllmN2a7jk2GnP/J4piB8w==}
+  '@hono/mcp@0.2.2':
+    resolution: {integrity: sha512-h1yHXsv08OWT8bXyIOoZVXw0qU1UmSDwm014fPnFXiyeS9iMMHftn907wNXTh07IorlGqPbZArev4nBz9Q3oKQ==}
     peerDependencies:
       '@modelcontextprotocol/sdk': ^1.23.0
       hono: '*'
@@ -2582,7 +2582,7 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@hono/mcp@0.2.1(@modelcontextprotocol/sdk@1.24.3(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)(zod@4.1.13)':
+  '@hono/mcp@0.2.2(@modelcontextprotocol/sdk@1.24.3(zod@4.1.13))(hono-rate-limiter@0.4.2(hono@4.10.7))(hono@4.10.7)(zod@4.1.13)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.24.3(zod@4.1.13)
       hono: 4.10.7
