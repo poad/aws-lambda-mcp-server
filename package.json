@@ -20,6 +20,6 @@
   "license": "ISC",
   "packageManager": "pnpm@10.26.1",
   "devDependencies": {
-    "pnpm": "^10.26.1"
+    "pnpm": "^10.26.2"
   }
 }
