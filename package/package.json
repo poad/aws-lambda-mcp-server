@@ -62,7 +62,7 @@
     "@aws-lambda-powertools/logger": "^2.30.0",
     "@hono/mcp": "^0.2.3",
     "@modelcontextprotocol/sdk": "^1.25.1",
-    "hono": "^4.11.2",
+    "hono": "^4.11.3",
     "zod": "^4.2.1"
   },
   "peerDependencies": {

@@ -45,7 +45,7 @@
     "aws-cdk-lib": "^2.233.0",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "^10.4.4",
-    "hono": "^4.11.2",
+    "hono": "^4.11.3",
     "zod": "^4.2.1"
   }
 }
