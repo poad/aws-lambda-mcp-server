@@ -46,6 +46,6 @@
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "^10.4.4",
     "hono": "^4.11.3",
-    "zod": "^4.3.4"
+    "zod": "^4.3.5"
   }
 }
