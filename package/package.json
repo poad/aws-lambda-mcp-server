@@ -1,6 +1,6 @@
 {
   "name": "aws-lambda-mcp-server",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A Hono wrapper for building an MCP (Model Context Protocol) Server that runs on AWS Lambda functions.",
   "type": "module",
   "keywords": [
@@ -59,11 +59,11 @@
     "vitest": "^4.0.16"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "^2.30.1",
-    "@hono/mcp": "^0.2.3",
-    "@modelcontextprotocol/sdk": "^1.25.2",
-    "hono": "^4.11.3",
-    "zod": "^4.3.5"
+    "@aws-lambda-powertools/logger": "^2.29.0",
+    "@hono/mcp": "^0.2.0",
+    "@modelcontextprotocol/sdk": "^1.23.0",
+    "hono": "^4.10.7",
+    "zod": "^3.25 || ^4.0"
   },
   "peerDependencies": {
     "@aws-lambda-powertools/logger": "^2.29.0",
