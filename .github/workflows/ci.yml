@@ -26,7 +26,6 @@ jobs:
       with:
         run_install: |
           - recursive: true
-            args: [--no-frozen-lockfile]
 
     - name: Test
       run: pnpm run --if-present --recursive --parallel test
