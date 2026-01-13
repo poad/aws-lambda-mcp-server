@@ -47,7 +47,7 @@
     "@eslint/compat": "2.0.1",
     "@eslint/js": "9.39.2",
     "@stylistic/eslint-plugin": "5.7.0",
-    "@types/node": "25.0.6",
+    "@types/node": "25.0.8",
     "eslint": "9.39.2",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import": "2.32.0",
@@ -62,7 +62,7 @@
     "@aws-lambda-powertools/logger": "2.30.2",
     "@hono/mcp": "0.2.3",
     "@modelcontextprotocol/sdk": "1.25.2",
-    "hono": "4.11.3",
+    "hono": "4.11.4",
     "zod": "4.3.5"
   },
   "peerDependencies": {
