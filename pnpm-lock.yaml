@@ -46,8 +46,8 @@ importers:
         specifier: 0.2.3
         version: 0.2.3(@modelcontextprotocol/sdk@1.25.2(hono@4.11.4)(zod@4.3.5))(hono-rate-limiter@0.4.2(hono@4.11.4))(hono@4.11.4)(zod@4.3.5)
       '@hono/node-server':
-        specifier: 1.19.8
-        version: 1.19.8(hono@4.11.4)
+        specifier: 1.19.9
+        version: 1.19.9(hono@4.11.4)
       '@stylistic/eslint-plugin':
         specifier: 5.7.0
         version: 5.7.0(eslint@9.39.2(jiti@2.6.1))
@@ -436,8 +436,8 @@ packages:
       hono-rate-limiter: ^0.4.2
       zod: ^3.25.0 || ^4.0.0
 
-  '@hono/node-server@1.19.8':
-    resolution: {integrity: sha512-0/g2lIOPzX8f3vzW1ggQgvG5mjtFBDBHFAzI5SFAi2DzSqS9luJwqg9T6O/gKYLi+inS7eNxBeIFkkghIPvrMA==}
+  '@hono/node-server@1.19.9':
+    resolution: {integrity: sha512-vHL6w3ecZsky+8P5MD+eFfaGTyCeOHUIFYMGpQGbrBTSmNNoxv0if69rEZ5giu36weC5saFuznL411gRX7bJDw==}
     engines: {node: '>=18.14.1'}
     peerDependencies:
       hono: ^4
@@ -2369,7 +2369,7 @@ snapshots:
       pkce-challenge: 5.0.1
       zod: 4.3.5
 
-  '@hono/node-server@1.19.8(hono@4.11.4)':
+  '@hono/node-server@1.19.9(hono@4.11.4)':
     dependencies:
       hono: 4.11.4
 
@@ -2395,7 +2395,7 @@ snapshots:
 
   '@modelcontextprotocol/sdk@1.25.2(hono@4.11.4)(zod@4.3.5)':
     dependencies:
-      '@hono/node-server': 1.19.8(hono@4.11.4)
+      '@hono/node-server': 1.19.9(hono@4.11.4)
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
       content-type: 1.0.5
