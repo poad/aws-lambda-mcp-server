@@ -42,9 +42,9 @@
   "dependencies": {
     "@aws-lambda-powertools/logger": "2.30.2",
     "@modelcontextprotocol/sdk": "1.25.2",
-    "aws-cdk-lib": "2.234.1",
+    "aws-cdk-lib": "2.235.0",
     "aws-lambda-mcp-server": "workspace:*",
-    "constructs": "10.4.4",
+    "constructs": "10.4.5",
     "hono": "4.11.4",
     "zod": "4.3.5"
   }
