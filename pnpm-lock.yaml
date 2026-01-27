@@ -19,7 +19,7 @@ importers:
         version: 2.30.2
       '@modelcontextprotocol/sdk':
         specifier: 1.25.3
-        version: 1.25.3(hono@4.11.6)(zod@4.3.6)
+        version: 1.25.3(hono@4.11.7)(zod@4.3.6)
       aws-cdk-lib:
         specifier: 2.236.0
         version: 2.236.0(constructs@10.4.5)
@@ -30,8 +30,8 @@ importers:
         specifier: 10.4.5
         version: 10.4.5
       hono:
-        specifier: 4.11.6
-        version: 4.11.6
+        specifier: 4.11.7
+        version: 4.11.7
       zod:
         specifier: 4.3.6
         version: 4.3.6
@@ -44,10 +44,10 @@ importers:
         version: 9.39.2
       '@hono/mcp':
         specifier: 0.2.3
-        version: 0.2.3(@modelcontextprotocol/sdk@1.25.3(hono@4.11.6)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.6))(hono@4.11.6)(zod@4.3.6)
+        version: 0.2.3(@modelcontextprotocol/sdk@1.25.3(hono@4.11.7)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.7))(hono@4.11.7)(zod@4.3.6)
       '@hono/node-server':
         specifier: 1.19.9
-        version: 1.19.9(hono@4.11.6)
+        version: 1.19.9(hono@4.11.7)
       '@stylistic/eslint-plugin':
         specifier: 5.7.1
         version: 5.7.1(eslint@9.39.2(jiti@2.6.1))
@@ -107,13 +107,13 @@ importers:
         version: 2.30.2
       '@hono/mcp':
         specifier: 0.2.3
-        version: 0.2.3(@modelcontextprotocol/sdk@1.25.3(hono@4.11.6)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.6))(hono@4.11.6)(zod@4.3.6)
+        version: 0.2.3(@modelcontextprotocol/sdk@1.25.3(hono@4.11.7)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.7))(hono@4.11.7)(zod@4.3.6)
       '@modelcontextprotocol/sdk':
         specifier: 1.25.3
-        version: 1.25.3(hono@4.11.6)(zod@4.3.6)
+        version: 1.25.3(hono@4.11.7)(zod@4.3.6)
       hono:
-        specifier: 4.11.6
-        version: 4.11.6
+        specifier: 4.11.7
+        version: 4.11.7
       zod:
         specifier: 4.3.6
         version: 4.3.6
@@ -1385,8 +1385,8 @@ packages:
     peerDependencies:
       hono: ^4.1.1
 
-  hono@4.11.6:
-    resolution: {integrity: sha512-ofIiiHyl34SV6AuhE3YT2mhO5HRWokce+eUYE82TsP6z0/H3JeJcjVWEMSIAiw2QkjDOEpES/lYsg8eEbsLtdw==}
+  hono@4.11.7:
+    resolution: {integrity: sha512-l7qMiNee7t82bH3SeyUCt9UF15EVmaBvsppY2zQtrbIhl/yzBTny+YUxsVjSjQ6gaqaeVtZmGocom8TzBlA4Yw==}
     engines: {node: '>=16.9.0'}
 
   html-escaper@2.0.2:
@@ -2349,17 +2349,17 @@ snapshots:
       '@eslint/core': 0.17.0
       levn: 0.4.1
 
-  '@hono/mcp@0.2.3(@modelcontextprotocol/sdk@1.25.3(hono@4.11.6)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.6))(hono@4.11.6)(zod@4.3.6)':
+  '@hono/mcp@0.2.3(@modelcontextprotocol/sdk@1.25.3(hono@4.11.7)(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.11.7))(hono@4.11.7)(zod@4.3.6)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.25.3(hono@4.11.6)(zod@4.3.6)
-      hono: 4.11.6
-      hono-rate-limiter: 0.4.2(hono@4.11.6)
+      '@modelcontextprotocol/sdk': 1.25.3(hono@4.11.7)(zod@4.3.6)
+      hono: 4.11.7
+      hono-rate-limiter: 0.4.2(hono@4.11.7)
       pkce-challenge: 5.0.1
       zod: 4.3.6
 
-  '@hono/node-server@1.19.9(hono@4.11.6)':
+  '@hono/node-server@1.19.9(hono@4.11.7)':
     dependencies:
-      hono: 4.11.6
+      hono: 4.11.7
 
   '@humanfs/core@0.19.1': {}
 
@@ -2381,9 +2381,9 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@modelcontextprotocol/sdk@1.25.3(hono@4.11.6)(zod@4.3.6)':
+  '@modelcontextprotocol/sdk@1.25.3(hono@4.11.7)(zod@4.3.6)':
     dependencies:
-      '@hono/node-server': 1.19.9(hono@4.11.6)
+      '@hono/node-server': 1.19.9(hono@4.11.7)
       ajv: 8.17.1
       ajv-formats: 3.0.1(ajv@8.17.1)
       content-type: 1.0.5
@@ -3415,11 +3415,11 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono-rate-limiter@0.4.2(hono@4.11.6):
+  hono-rate-limiter@0.4.2(hono@4.11.7):
     dependencies:
-      hono: 4.11.6
+      hono: 4.11.7
 
-  hono@4.11.6: {}
+  hono@4.11.7: {}
 
   html-escaper@2.0.2: {}
 
