@@ -18,7 +18,7 @@
   ],
   "author": "poad",
   "license": "ISC",
-  "packageManager": "pnpm@10.29.2",
+  "packageManager": "pnpm@10.29.3",
   "devDependencies": {
     "pnpm": "^10.29.3"
   }

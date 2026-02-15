@@ -5,8 +5,9 @@ packages:
 publishBranch: main
 
 overrides:
-  # eslint: ">=10.0.0"
-  # '@eslint/js': ">=10.0.0"
-  eslint: "^9"
-  '@eslint/js': "^9"
+  markdown-it: '>=14.1.1'
+  # eslint: '>=10.0.0'
+  # '@eslint/js': '>=10.0.0'
+  eslint: '^9'
+  '@eslint/js': '^9'
   '@stylistic/eslint-plugin': '>=5.0.0'

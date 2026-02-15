@@ -75,6 +75,12 @@ jobs:
         working-directory: package
         run : pnpm publish --access public --provenance
 
+      - uses: actions/create-github-app-token@29824e69f54612133e76f7eaac726eef6c875baf # v2.2.1
+        id: app-token
+        with:
+          app-id: ${{ vars.APP_ID }}
+          private-key: ${{ secrets.PRIVATE_KEY }}
+
       - name: Create GitHub Release with tag
         id: create-release
         run: |
@@ -84,7 +90,7 @@ jobs:
             --notes "$PR_BODY")
           echo "url=$RELEASE_URL" >> $GITHUB_OUTPUT
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           VERSION: ${{ steps.package.outputs.version }}
           SHA: ${{ github.sha }}
           PR_BODY: ${{ github.event.pull_request.body }}
@@ -102,7 +108,7 @@ jobs:
           - 🏷️ GitHub Release: $RELEASE_URL
           - 🔗 Workflow run: $SERVER_URL/$REPOSITORY/actions/runs/$RUN_ID"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           VERSION: ${{ steps.package.outputs.version }}
           PACKAGE_NAME: ${{ steps.package.outputs.name }}
@@ -123,7 +129,7 @@ jobs:
           Please check the workflow logs for details.
           🔗 Workflow run: $SERVER_URL/$REPOSITORY/actions/runs/$RUN_ID"
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
           VERSION: ${{ steps.package.outputs.version }}
           SERVER_URL: ${{ github.server_url }}
