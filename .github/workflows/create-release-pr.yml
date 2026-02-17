@@ -45,7 +45,7 @@ jobs:
         with:
           run_install: |
             - recursive: true
-              args: [--no-frozen-lockfile]
+              args: [--frozen-lockfile]
       
       # No need to install dependencies - npm version works without them
       - name: Version bump
