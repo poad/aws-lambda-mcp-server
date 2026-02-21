@@ -48,7 +48,7 @@
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.9.0",
     "@types/node": "25.3.0",
-    "eslint": "^10.0.0",
+    "eslint": "^10.0.1",
     "eslint-import-resolver-typescript": "4.4.4",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-promise": "7.2.1",
@@ -59,11 +59,11 @@
     "vitest": "4.0.18"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "^2.29.0",
-    "@hono/mcp": "^0.2.0",
-    "@modelcontextprotocol/sdk": "^1.25.2",
-    "hono": "^4.11.10",
-    "zod": "^3.25 || ^4.0"
+    "@aws-lambda-powertools/logger": "^2.31.0",
+    "@hono/mcp": "^0.2.3",
+    "@modelcontextprotocol/sdk": "^1.26.0",
+    "hono": "^4.12.0",
+    "zod": "^4.3.6"
   },
   "peerDependencies": {
     "@aws-lambda-powertools/logger": "^2.29.0",
