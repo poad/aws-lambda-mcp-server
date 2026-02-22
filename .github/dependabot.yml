@@ -27,6 +27,9 @@ updates:
     rebase-strategy: auto
     assignees:
       - poad
+    ignore:
+      - dependency-name: "@types/node"
+        versions: ["25.x", "27.x", "29.x"]  # 奇数バージョン（非LTS）を無視
     groups:
       npm:
         patterns:
