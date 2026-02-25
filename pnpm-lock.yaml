@@ -21,8 +21,8 @@ importers:
         specifier: 2.31.0
         version: 2.31.0
       '@modelcontextprotocol/sdk':
-        specifier: 1.27.0
-        version: 1.27.0(zod@4.3.6)
+        specifier: 1.27.1
+        version: 1.27.1(zod@4.3.6)
       aws-cdk-lib:
         specifier: 2.240.0
         version: 2.240.0(constructs@10.5.1)
@@ -47,7 +47,7 @@ importers:
         version: 10.0.1(eslint@10.0.2(jiti@2.6.1))
       '@hono/mcp':
         specifier: 0.2.3
-        version: 0.2.3(@modelcontextprotocol/sdk@1.27.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.2))(hono@4.12.2)(zod@4.3.6)
+        version: 0.2.3(@modelcontextprotocol/sdk@1.27.1(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.2))(hono@4.12.2)(zod@4.3.6)
       '@hono/node-server':
         specifier: 1.19.9
         version: 1.19.9(hono@4.12.2)
@@ -110,10 +110,10 @@ importers:
         version: 2.31.0
       '@hono/mcp':
         specifier: ^0.2.3
-        version: 0.2.3(@modelcontextprotocol/sdk@1.27.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.2))(hono@4.12.2)(zod@4.3.6)
+        version: 0.2.3(@modelcontextprotocol/sdk@1.27.1(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.2))(hono@4.12.2)(zod@4.3.6)
       '@modelcontextprotocol/sdk':
-        specifier: ^1.27.0
-        version: 1.27.0(zod@4.3.6)
+        specifier: ^1.27.1
+        version: 1.27.1(zod@4.3.6)
       hono:
         specifier: ^4.12.2
         version: 4.12.2
@@ -468,8 +468,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
 
-  '@modelcontextprotocol/sdk@1.27.0':
-    resolution: {integrity: sha512-qOdO524oPMkUsOJTrsH9vz/HN3B5pKyW+9zIW51A9kDMVe7ON70drz1ouoyoyOcfzc+oxhkQ6jWmbyKnlWmYqA==}
+  '@modelcontextprotocol/sdk@1.27.1':
+    resolution: {integrity: sha512-sr6GbP+4edBwFndLbM60gf07z0FQ79gaExpnsjMGePXqFcSSb7t6iscpjk9DhFhwd+mTEQrzNafGP8/iGGFYaA==}
     engines: {node: '>=18'}
     peerDependencies:
       '@cfworker/json-schema': ^4.1.1
@@ -2310,9 +2310,9 @@ snapshots:
       '@eslint/core': 1.1.0
       levn: 0.4.1
 
-  '@hono/mcp@0.2.3(@modelcontextprotocol/sdk@1.27.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.2))(hono@4.12.2)(zod@4.3.6)':
+  '@hono/mcp@0.2.3(@modelcontextprotocol/sdk@1.27.1(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.2))(hono@4.12.2)(zod@4.3.6)':
     dependencies:
-      '@modelcontextprotocol/sdk': 1.27.0(zod@4.3.6)
+      '@modelcontextprotocol/sdk': 1.27.1(zod@4.3.6)
       hono: 4.12.2
       hono-rate-limiter: 0.4.2(hono@4.12.2)
       pkce-challenge: 5.0.1
@@ -2342,7 +2342,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@modelcontextprotocol/sdk@1.27.0(zod@4.3.6)':
+  '@modelcontextprotocol/sdk@1.27.1(zod@4.3.6)':
     dependencies:
       '@hono/node-server': 1.19.9(hono@4.12.2)
       ajv: 8.18.0
