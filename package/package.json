@@ -44,7 +44,7 @@
     "lint-fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@eslint/compat": "2.0.2",
+    "@eslint/compat": "2.0.3",
     "@eslint/js": "^10.0.1",
     "@stylistic/eslint-plugin": "^5.10.0",
     "@types/node": "^24.12.0",
