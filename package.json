@@ -5,7 +5,7 @@
   "description": "A Hono wrapper for building an MCP (Model Context Protocol) Server that runs on AWS Lambda functions.",
   "type": "module",
   "scripts": {
-    "build": "pnpm run --if-present --recursive --parallel build",
+    "build": "pnpm run --if-present --recursive build",
     "test": "pnpm run --if-present --recursive --parallel test",
     "lint": "pnpm run --if-present --recursive --parallel lint",
     "lint-fix": "pnpm run --if-present --recursive --parallel lint-fix"
@@ -18,8 +18,5 @@
   ],
   "author": "poad",
   "license": "ISC",
-  "packageManager": "pnpm@10.32.1",
-  "devDependencies": {
-    "pnpm": "^10.32.1"
-  }
+  "packageManager": "pnpm@10.32.1"
 }
