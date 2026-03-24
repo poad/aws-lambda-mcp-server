@@ -19,6 +19,28 @@ permissions:
   contents: read
 
 jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+    - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
+      name: Install pnpm
+      with:
+        run_install: |
+          - recursive: true
+
+    - name: Build
+      run: pnpm build
+
+    - name: Lint
+      run: pnpm run --if-present --recursive --parallel lint
+
+    - name: Test
+      run: pnpm run --if-present --recursive --parallel test
+
   deploy-bexample:
     # 同時実行すると CREATE_IN_PROGRESS や UPDATE_IN_PROGRESS 状態で cdk deploy を行う可能性があるため抑止する
     concurrency:
@@ -43,7 +65,7 @@ jobs:
         check-latest: true
         package-manager-cache: false
 
-    - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v4.4.0
+    - uses: pnpm/action-setup@fc06bc1257f339d1d5d8b3a19a8cae5388b55320 # v5.0.0
       name: Install pnpm
       with:
         run_install: |
@@ -51,7 +73,7 @@ jobs:
             args: [--no-frozen-lockfile]
           - args: [--global, esbuild]
 
-    - name: build
+    - name: Build
       run: pnpm build
 
     - name: deploy

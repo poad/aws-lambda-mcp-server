@@ -22,6 +22,7 @@
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
     "declarationMap": true,
+    "rootDir": "./src",
     "outDir": "dist",
     "typeRoots": [
       "./node_modules/@types"

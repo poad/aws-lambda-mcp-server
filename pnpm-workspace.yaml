@@ -2,7 +2,4 @@ packages:
   - package
   - example
 
-overrides:
-  minimatch@<10.2.1: '>=10.2.1'
-
 publishBranch: main
