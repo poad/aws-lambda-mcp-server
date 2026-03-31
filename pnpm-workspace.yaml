@@ -3,3 +3,11 @@ packages:
   - example
 
 publishBranch: main
+
+strictPeerDependencies: false
+
+trustPolicy: no-downgrade
+minimumReleaseAge: 10080 # 7 days in minutes
+
+overrides:
+  semver: '>=7'
