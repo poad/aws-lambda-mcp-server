@@ -9,7 +9,7 @@ export class ExampleStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props?: cdk.StackProps) {
     super(scope, id, props);
 
-    const projectName = this.node.tryGetContext('project-name') ?? 'aws-ambda';
+    const projectName = this.node.tryGetContext('project-name') ?? 'aws-lambda';
 
     // Lambda関数のIAMロール
     const lambdaRole = new cdk.aws_iam.Role(this, 'LambdaRole', {

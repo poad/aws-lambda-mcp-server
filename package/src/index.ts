@@ -11,7 +11,7 @@
 
 import { Logger } from '@aws-lambda-powertools/logger';
 import { StreamableHTTPTransport } from '@hono/mcp';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
+import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { Context, Hono } from 'hono';
 import { BlankEnv, BlankInput } from 'hono/types';
 
