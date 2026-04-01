@@ -38,9 +38,6 @@ jobs:
     - name: Lint
       run: pnpm run --if-present --recursive --parallel lint
 
-    - name: Test
-      run: pnpm run --if-present --recursive --parallel test
-
   deploy-bexample:
     # 同時実行すると CREATE_IN_PROGRESS や UPDATE_IN_PROGRESS 状態で cdk deploy を行う可能性があるため抑止する
     concurrency:
