@@ -1,5 +1,17 @@
 packages:
   - package
   - example
+minimumReleaseAge: 10080 # 7 days in minutes
+minimumReleaseAgeExclude:
+  - '@modelcontextprotocol/sdk'
+  - 'path-to-regexp'
+
+overrides:
+  path-to-regexp@>=8.0.0 <8.4.0: '>=8.4.0'
+  semver: '>=7'
 
 publishBranch: main
+
+strictPeerDependencies: false
+
+trustPolicy: no-downgrade
