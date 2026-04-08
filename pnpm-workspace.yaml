@@ -3,10 +3,12 @@ packages:
   - example
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
-  - '@modelcontextprotocol/sdk'
-  - 'path-to-regexp'
+  - '@hono/node-server@1.19.13'
+  - hono@4.12.12
 
 overrides:
+  '@hono/node-server@<1.19.13': '>=1.19.13'
+  hono: '>=4.12.12'
   path-to-regexp@>=8.0.0 <8.4.0: '>=8.4.0'
   semver: '>=7'
 
