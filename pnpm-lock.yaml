@@ -17,8 +17,8 @@ importers:
   example:
     dependencies:
       '@aws-lambda-powertools/logger':
-        specifier: 2.32.0
-        version: 2.32.0
+        specifier: 2.33.0
+        version: 2.33.0
       '@modelcontextprotocol/sdk':
         specifier: 1.29.0
         version: 1.29.0(zod@4.3.6)
@@ -99,8 +99,8 @@ importers:
   package:
     dependencies:
       '@aws-lambda-powertools/logger':
-        specifier: ^2.32.0
-        version: 2.32.0
+        specifier: ^2.33.0
+        version: 2.33.0
       '@hono/mcp':
         specifier: ^0.2.4
         version: 0.2.5(@modelcontextprotocol/sdk@1.29.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.12))(hono@4.12.12)(zod@4.3.6)
@@ -166,13 +166,13 @@ packages:
       - jsonschema
       - semver
 
-  '@aws-lambda-powertools/commons@2.32.0':
-    resolution: {integrity: sha512-vsdakJDZu/KkJ5+1WHkawQ5R06aCK0XYB3nc3tpcBfO1YmOHkn+QpuGiZtkmpzIykGPAO9lnBjK5joAeim2o4A==}
+  '@aws-lambda-powertools/commons@2.33.0':
+    resolution: {integrity: sha512-cXGfWT4FXtLO7Ny/shep6V/xYzgVN7hvukOA0bTa4nlg2GWiQsPoBoKvCEcfQ9I8GIS0tPyDfRkdx80SvA7LpA==}
 
-  '@aws-lambda-powertools/logger@2.32.0':
-    resolution: {integrity: sha512-ZfomsMv4FnxYkgUvU9S6BPrTzd+ntPiIBZcrvSNz+/aPvVwu2BGHSKDuVlXa7nr6rB1wjzaA5bmLVTESIdnsdQ==}
+  '@aws-lambda-powertools/logger@2.33.0':
+    resolution: {integrity: sha512-ejkgit7O8yrhu5Mbx8fBAd3lykBNtYsVzFSR653Sh3d8ojpp8zo2OoARt3lKEK4cjHsKB/kUGbpzZcSYkR6Hvg==}
     peerDependencies:
-      '@aws-lambda-powertools/jmespath': 2.32.0
+      '@aws-lambda-powertools/jmespath': 2.33.0
       '@middy/core': 4.x || 5.x || 6.x || 7.x
     peerDependenciesMeta:
       '@aws-lambda-powertools/jmespath':
@@ -1519,13 +1519,13 @@ snapshots:
 
   '@aws-cdk/cloud-assembly-schema@53.14.0': {}
 
-  '@aws-lambda-powertools/commons@2.32.0':
+  '@aws-lambda-powertools/commons@2.33.0':
     dependencies:
       '@aws/lambda-invoke-store': 0.2.4
 
-  '@aws-lambda-powertools/logger@2.32.0':
+  '@aws-lambda-powertools/logger@2.33.0':
     dependencies:
-      '@aws-lambda-powertools/commons': 2.32.0
+      '@aws-lambda-powertools/commons': 2.33.0
       '@aws/lambda-invoke-store': 0.2.4
 
   '@aws/lambda-invoke-store@0.2.4': {}
