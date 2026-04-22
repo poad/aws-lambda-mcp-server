@@ -23,8 +23,8 @@ importers:
         specifier: 1.29.0
         version: 1.29.0(zod@4.3.6)
       aws-cdk-lib:
-        specifier: 2.249.0
-        version: 2.249.0(constructs@10.6.0)
+        specifier: 2.250.0
+        version: 2.250.0(constructs@10.6.0)
       aws-lambda-mcp-server:
         specifier: workspace:*
         version: link:../package
@@ -813,8 +813,8 @@ packages:
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
 
-  aws-cdk-lib@2.249.0:
-    resolution: {integrity: sha512-SRb6TpPtsaywyoihMAYKBKB6O4RwSKK4VMLZwZF4xAJ+bBv5TaQKyXw4gQvoktLvCs1Bnluci0F66VBMD4bIRw==}
+  aws-cdk-lib@2.250.0:
+    resolution: {integrity: sha512-8U8/S9VcmKSc3MHZWiB7P0IecgXoohI8Ya3dgtZMgbzC4mB+MEQmsYBeNgm4vzGQdRos8HjQLnFX1IBlZh7jQA==}
     engines: {node: '>= 20.0.0'}
     peerDependencies:
       constructs: ^10.5.0
@@ -1990,7 +1990,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  aws-cdk-lib@2.249.0(constructs@10.6.0):
+  aws-cdk-lib@2.250.0(constructs@10.6.0):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.273
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.1
