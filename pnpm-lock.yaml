@@ -23,8 +23,8 @@ importers:
         specifier: 1.29.0
         version: 1.29.0(zod@4.3.6)
       aws-cdk-lib:
-        specifier: 2.250.0
-        version: 2.250.0(constructs@10.6.0)
+        specifier: 2.251.0
+        version: 2.251.0(constructs@10.6.0)
       aws-lambda-mcp-server:
         specifier: workspace:*
         version: link:../package
@@ -33,7 +33,7 @@ importers:
         version: 10.6.0
       hono:
         specifier: '>=4.12.12'
-        version: 4.12.14
+        version: 4.12.15
       zod:
         specifier: 4.3.6
         version: 4.3.6
@@ -46,10 +46,10 @@ importers:
         version: 10.0.1(eslint@10.2.1(jiti@2.6.1))
       '@hono/mcp':
         specifier: 0.2.5
-        version: 0.2.5(@modelcontextprotocol/sdk@1.29.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.14))(hono@4.12.14)(zod@4.3.6)
+        version: 0.2.5(@modelcontextprotocol/sdk@1.29.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.15))(hono@4.12.15)(zod@4.3.6)
       '@hono/node-server':
         specifier: ^2.0.0
-        version: 2.0.0(hono@4.12.14)
+        version: 2.0.0(hono@4.12.15)
       '@stylistic/eslint-plugin':
         specifier: 5.10.0
         version: 5.10.0(eslint@10.2.1(jiti@2.6.1))
@@ -103,13 +103,13 @@ importers:
         version: 2.33.0
       '@hono/mcp':
         specifier: ^0.2.5
-        version: 0.2.5(@modelcontextprotocol/sdk@1.29.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.14))(hono@4.12.14)(zod@4.3.6)
+        version: 0.2.5(@modelcontextprotocol/sdk@1.29.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.15))(hono@4.12.15)(zod@4.3.6)
       '@modelcontextprotocol/sdk':
         specifier: ^1.29.0
         version: 1.29.0(zod@4.3.6)
       hono:
         specifier: '>=4.12.12'
-        version: 4.12.14
+        version: 4.12.15
       zod:
         specifier: ^4.3.6
         version: 4.3.6
@@ -817,8 +817,8 @@ packages:
   ajv@8.18.0:
     resolution: {integrity: sha512-PlXPeEWMXMZ7sPYOHqmDyCJzcfNrUr3fGNKtezX14ykXOEIvyK81d+qydx89KY5O71FKMPaQ2vBfBFI5NHR63A==}
 
-  aws-cdk-lib@2.250.0:
-    resolution: {integrity: sha512-8U8/S9VcmKSc3MHZWiB7P0IecgXoohI8Ya3dgtZMgbzC4mB+MEQmsYBeNgm4vzGQdRos8HjQLnFX1IBlZh7jQA==}
+  aws-cdk-lib@2.251.0:
+    resolution: {integrity: sha512-H1Jfz2Oyejn+yG24i+By9fZpYfg+E3h1XnFCF2wnt/MyGOTIePRph7MRGkX73ap10ERSpmd0Ly58OLVykFoSQA==}
     engines: {node: '>= 20.0.0'}
     peerDependencies:
       constructs: ^10.5.0
@@ -1160,8 +1160,8 @@ packages:
     peerDependencies:
       hono: '>=4.12.12'
 
-  hono@4.12.14:
-    resolution: {integrity: sha512-am5zfg3yu6sqn5yjKBNqhnTX7Cv+m00ox+7jbaKkrLMRJ4rAdldd1xPd/JzbBWspqaQv6RSTrgFN95EsfhC+7w==}
+  hono@4.12.15:
+    resolution: {integrity: sha512-qM0jDhFEaCBb4TxoW7f53Qrpv9RBiayUHo0S52JudprkhvpjIrGoU1mnnr29Fvd1U335ZFPZQY1wlkqgfGXyLg==}
     engines: {node: '>=16.9.0'}
 
   http-errors@2.0.1:
@@ -1734,17 +1734,17 @@ snapshots:
       '@eslint/core': 1.2.1
       levn: 0.4.1
 
-  '@hono/mcp@0.2.5(@modelcontextprotocol/sdk@1.29.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.14))(hono@4.12.14)(zod@4.3.6)':
+  '@hono/mcp@0.2.5(@modelcontextprotocol/sdk@1.29.0(zod@4.3.6))(hono-rate-limiter@0.4.2(hono@4.12.15))(hono@4.12.15)(zod@4.3.6)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.29.0(zod@4.3.6)
-      hono: 4.12.14
-      hono-rate-limiter: 0.4.2(hono@4.12.14)
+      hono: 4.12.15
+      hono-rate-limiter: 0.4.2(hono@4.12.15)
       pkce-challenge: 5.0.1
       zod: 4.3.6
 
-  '@hono/node-server@2.0.0(hono@4.12.14)':
+  '@hono/node-server@2.0.0(hono@4.12.15)':
     dependencies:
-      hono: 4.12.14
+      hono: 4.12.15
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -1764,7 +1764,7 @@ snapshots:
 
   '@modelcontextprotocol/sdk@1.29.0(zod@4.3.6)':
     dependencies:
-      '@hono/node-server': 2.0.0(hono@4.12.14)
+      '@hono/node-server': 2.0.0(hono@4.12.15)
       ajv: 8.18.0
       ajv-formats: 3.0.1(ajv@8.18.0)
       content-type: 1.0.5
@@ -1774,7 +1774,7 @@ snapshots:
       eventsource-parser: 3.0.8
       express: 5.2.1
       express-rate-limit: 8.4.0(express@5.2.1)
-      hono: 4.12.14
+      hono: 4.12.15
       jose: 6.2.2
       json-schema-typed: 8.0.2
       pkce-challenge: 5.0.1
@@ -1999,7 +1999,7 @@ snapshots:
       json-schema-traverse: 1.0.0
       require-from-string: 2.0.2
 
-  aws-cdk-lib@2.250.0(constructs@10.6.0):
+  aws-cdk-lib@2.251.0(constructs@10.6.0):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.273
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.1
@@ -2403,11 +2403,11 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono-rate-limiter@0.4.2(hono@4.12.14):
+  hono-rate-limiter@0.4.2(hono@4.12.15):
     dependencies:
-      hono: 4.12.14
+      hono: 4.12.15
 
-  hono@4.12.14: {}
+  hono@4.12.15: {}
 
   http-errors@2.0.1:
     dependencies:
