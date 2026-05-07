@@ -1,14 +1,19 @@
 packages:
   - package
   - example
+allowBuilds:
+  esbuild: false
+  unrs-resolver: false
 minimumReleaseAge: 10080 # 7 days in minutes
 minimumReleaseAgeExclude:
   - '@hono/node-server@1.19.13'
   - hono@4.12.12
+  - ip-address@10.1.1
 
 overrides:
   '@hono/node-server@<1.19.13': '>=1.19.13'
   hono: '>=4.12.12'
+  ip-address@<=10.1.0: ^10.1.1
   path-to-regexp@>=8.0.0 <8.4.0: '>=8.4.0'
   semver: '>=7'
 
