@@ -36,19 +36,20 @@ const eslintConfig: Config[] = defineConfig(
   pluginPromise.configs['flat/recommended'],
   {
     files: ['**/*.ts'],
-    plugins: {
-      'import-x': importX,
-      '@stylistic': stylistic,
-    },
     languageOptions: {
       ecmaVersion: 'latest',
       sourceType: 'module',
       parser,
       parserOptions: {
-        projectService: false,
+        projectService: {
+          allowDefaultProject: ['eslint.config.ts'],
+        },
         tsconfigRootDir: __dirname,
-        project: ['./tsconfig-eslint.json'],
       },
+    },
+    plugins: {
+      'import-x': importX,
+      '@stylistic': stylistic,
     },
     extends: [
       'import-x/flat/recommended',

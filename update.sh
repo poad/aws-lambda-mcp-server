@@ -14,11 +14,10 @@ if [ $result -ne 0 ]; then
 fi
 echo ""
 pwd
-npx -y pnpm@latest self-update && pnpm install && pnpm up -r && pnpm audit --fix override && pnpm up -r && pnpm -r --if-present --parallel build && pnpm -r --if-present --parallel lint-fix && pnpm -r --if-present --parallel build && pnpm install -r --no-frozen-lockfile
-result=$?
-if [ $result -ne 0 ]; then
+
+if ! (npx -y pnpm@latest self-update && pnpm install && pnpm up -r && pnpm audit --fix override && pnpm up -r && pnpm -r --if-present --parallel build && pnpm -r --if-present --parallel lint-fix && pnpm -r --if-present --parallel build && pnpm install -r --no-frozen-lockfile); then
   cd "${CUR}" || exit
-  exit $result
+  exit 1
 fi
 git commit -am "Bumps node modules" && git push
 result=$?
