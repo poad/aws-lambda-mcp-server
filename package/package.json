@@ -55,14 +55,14 @@
     "jiti": "2.6.1",
     "tsx": "4.21.0",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.59.1"
+    "typescript-eslint": "8.59.2"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "2.33.0",
     "@hono/mcp": "0.2.5",
     "@modelcontextprotocol/sdk": "1.29.0",
     "hono": "^4.12.18",
-    "zod": "4.4.2"
+    "zod": "4.4.3"
   },
   "peerDependencies": {
     "@aws-lambda-powertools/logger": "^2.33.0",
