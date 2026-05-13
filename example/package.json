@@ -23,7 +23,7 @@
     "@stylistic/eslint-plugin": "5.10.0",
     "@types/aws-lambda": "8.10.161",
     "@types/node": "25.6.0",
-    "aws-cdk": "2.1120.0",
+    "aws-cdk": "2.1121.0",
     "esbuild": "0.28.0",
     "eslint": "10.3.0",
     "eslint-import-resolver-typescript": "4.4.4",
@@ -39,7 +39,7 @@
   "dependencies": {
     "@aws-lambda-powertools/logger": "2.33.0",
     "@modelcontextprotocol/sdk": "1.29.0",
-    "aws-cdk-lib": "2.252.0",
+    "aws-cdk-lib": "2.253.0",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "10.6.0",
     "hono": "^4.12.18",
