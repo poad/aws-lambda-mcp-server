@@ -16,13 +16,13 @@
     "lint-fix": "eslint . --fix"
   },
   "devDependencies": {
-    "@eslint/compat": "2.0.5",
+    "@eslint/compat": "2.1.0",
     "@eslint/js": "10.0.1",
     "@hono/mcp": "0.2.5",
-    "@hono/node-server": "2.0.1",
+    "@hono/node-server": "2.0.2",
     "@stylistic/eslint-plugin": "5.10.0",
     "@types/aws-lambda": "8.10.161",
-    "@types/node": "25.6.1",
+    "@types/node": "25.6.2",
     "aws-cdk": "2.1121.0",
     "esbuild": "0.28.0",
     "eslint": "10.3.0",
@@ -39,7 +39,7 @@
   "dependencies": {
     "@aws-lambda-powertools/logger": "2.33.0",
     "@modelcontextprotocol/sdk": "1.29.0",
-    "aws-cdk-lib": "2.253.0",
+    "aws-cdk-lib": "2.253.1",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "10.6.0",
     "hono": "^4.12.18",
