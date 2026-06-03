@@ -55,10 +55,10 @@
     "jiti": "2.7.0",
     "tsx": "4.22.3",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.59.4"
+    "typescript-eslint": "8.60.0"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "2.33.0",
+    "@aws-lambda-powertools/logger": "2.33.1",
     "@hono/mcp": "0.3.0",
     "@modelcontextprotocol/sdk": "1.29.0",
     "hono": "^4.12.23",
