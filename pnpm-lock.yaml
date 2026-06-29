@@ -7,10 +7,10 @@ importers:
     configDependencies: {}
     packageManagerDependencies:
       '@pnpm/exe':
-        specifier: 11.9.0
+        specifier: ^11.9.0
         version: 11.9.0
       pnpm:
-        specifier: 11.9.0
+        specifier: ^11.9.0
         version: 11.9.0
 
 packages:
@@ -248,7 +248,7 @@ importers:
         version: 10.0.1(eslint@10.4.1(jiti@2.7.0))
       '@hono/mcp':
         specifier: 0.3.0
-        version: 0.3.0(@modelcontextprotocol/sdk@1.29.0(zod@4.4.3))(hono-rate-limiter@0.4.2(hono@4.12.26))(hono@4.12.26)(zod@4.4.3)
+        version: 0.3.0(@modelcontextprotocol/sdk@1.29.0(zod@4.4.3))(hono-rate-limiter@0.5.3(hono@4.12.26))(hono@4.12.26)(zod@4.4.3)
       '@hono/node-server':
         specifier: 2.0.4
         version: 2.0.4(hono@4.12.26)
@@ -305,7 +305,7 @@ importers:
         version: 2.33.1
       '@hono/mcp':
         specifier: 0.3.0
-        version: 0.3.0(@modelcontextprotocol/sdk@1.29.0(zod@4.4.3))(hono-rate-limiter@0.4.2(hono@4.12.26))(hono@4.12.26)(zod@4.4.3)
+        version: 0.3.0(@modelcontextprotocol/sdk@1.29.0(zod@4.4.3))(hono-rate-limiter@0.5.3(hono@4.12.26))(hono@4.12.26)(zod@4.4.3)
       '@modelcontextprotocol/sdk':
         specifier: 1.29.0
         version: 1.29.0(zod@4.4.3)
@@ -1230,10 +1230,14 @@ packages:
     resolution: {integrity: sha512-T2UbfbBEF32wiepXIsMlTW9+dDYC6wMh/t/vYA4tuOMKqWz/n3vr1NFSxQiyP+zk2mXsoMA/i/7qV6LKut1t1A==}
     engines: {node: '>= 0.4'}
 
-  hono-rate-limiter@0.4.2:
-    resolution: {integrity: sha512-AAtFqgADyrmbDijcRTT/HJfwqfvhalya2Zo+MgfdrMPas3zSMD8SU03cv+ZsYwRU1swv7zgVt0shwN059yzhjw==}
+  hono-rate-limiter@0.5.3:
+    resolution: {integrity: sha512-M0DxbVMpPELEzLi0AJg1XyBHLGJXz7GySjsPoK+gc5YeeBsdGDGe+2RvVuCAv8ydINiwlbxqYMNxUEyYfRji/A==}
     peerDependencies:
-      hono: ^4.1.1
+      hono: ^4.10.8
+      unstorage: ^1.17.3
+    peerDependenciesMeta:
+      unstorage:
+        optional: true
 
   hono@4.12.26:
     resolution: {integrity: sha512-uyZtpnYxM9CmQ7QsQknM4zN8EftNqhON1qYeIKM0Se67CCEe2c44xyGURwB0axX2fBDu1dqHrHAc1hmNT8ITkw==}
@@ -1852,11 +1856,11 @@ snapshots:
       '@eslint/core': 1.2.1
       levn: 0.4.1
 
-  '@hono/mcp@0.3.0(@modelcontextprotocol/sdk@1.29.0(zod@4.4.3))(hono-rate-limiter@0.4.2(hono@4.12.26))(hono@4.12.26)(zod@4.4.3)':
+  '@hono/mcp@0.3.0(@modelcontextprotocol/sdk@1.29.0(zod@4.4.3))(hono-rate-limiter@0.5.3(hono@4.12.26))(hono@4.12.26)(zod@4.4.3)':
     dependencies:
       '@modelcontextprotocol/sdk': 1.29.0(zod@4.4.3)
       hono: 4.12.26
-      hono-rate-limiter: 0.4.2(hono@4.12.26)
+      hono-rate-limiter: 0.5.3(hono@4.12.26)
       pkce-challenge: 5.0.1
       zod: 4.4.3
 
@@ -2511,7 +2515,7 @@ snapshots:
     dependencies:
       function-bind: 1.1.2
 
-  hono-rate-limiter@0.4.2(hono@4.12.26):
+  hono-rate-limiter@0.5.3(hono@4.12.26):
     dependencies:
       hono: 4.12.26
 
