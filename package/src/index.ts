@@ -10,9 +10,9 @@
  */
 
 import { Logger } from '@aws-lambda-powertools/logger';
-import { StreamableHTTPTransport } from '@hono/mcp';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
-import { Context, Hono } from 'hono';
+import { McpServer, WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/server';
+import { createMcpHonoApp } from '@modelcontextprotocol/hono';
+import { Context } from 'hono';
 import { BlankEnv, BlankInput } from 'hono/types';
 
 /**
@@ -21,6 +21,15 @@ import { BlankEnv, BlankInput } from 'hono/types';
  * @private
  */
 const logger = new Logger();
+
+// `@modelcontextprotocol/hono` が c.set('parsedBody', ...) で格納する値の型を
+// Hono の ContextVariableMap に宣言マージで追加する（パッケージ側の型定義に
+// 反映されていないための回避策）
+declare module 'hono' {
+  interface ContextVariableMap {
+    parsedBody: unknown;
+  }
+}
 
 /**
  * 許可されていないHTTPメソッドに対するハンドラーです。
@@ -93,7 +102,7 @@ const handleError = (
  * @returns void
  * @private
  */
-const closeResources = async (server: McpServer, transport: StreamableHTTPTransport) => {
+const closeResources = async (server: McpServer, transport: WebStandardStreamableHTTPServerTransport) => {
   // 両方のクローズを確実に実行（片方が失敗してももう片方を実行）
   const closeResults = await Promise.allSettled([
     transport.close(),
@@ -125,7 +134,7 @@ const closeResources = async (server: McpServer, transport: StreamableHTTPTransp
  * @private
  */
 const handleRequest = async (createMcpServer: () => McpServer, c: Context<BlankEnv, '/mcp', BlankInput>) => {
-  const transport = new StreamableHTTPTransport({
+  const transport = new WebStandardStreamableHTTPServerTransport({
     sessionIdGenerator: undefined, // セッションIDを生成しない（ステートレスモード）
     enableJsonResponse: true,
   });
@@ -133,7 +142,7 @@ const handleRequest = async (createMcpServer: () => McpServer, c: Context<BlankE
   try {
     await server.connect(transport);
     logger.trace('MCP リクエストを受信');
-    return await transport.handleRequest(c);
+    return await transport.handleRequest(c.req.raw, { parsedBody: c.get('parsedBody') });
   } catch (error) {
     return handleError(c, error, 'MCP 接続中のエラー:');
   } finally {
@@ -168,7 +177,7 @@ const handleRequest = async (createMcpServer: () => McpServer, c: Context<BlankE
  * ```
  */
 export const createHonoApp = (createMcpServer: () => McpServer) => {
-  const app = new Hono();
+  const app = createMcpHonoApp();
 
   app.post('/mcp', async (c) => {
     return await handleRequest(createMcpServer, c);

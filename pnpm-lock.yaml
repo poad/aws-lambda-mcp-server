@@ -222,9 +222,9 @@ importers:
       '@aws-lambda-powertools/logger':
         specifier: 2.34.0
         version: 2.34.0
-      '@modelcontextprotocol/sdk':
-        specifier: 1.30.0
-        version: 1.30.0(zod@4.4.3)
+      '@modelcontextprotocol/server':
+        specifier: 2.0.0
+        version: 2.0.0
       aws-cdk-lib:
         specifier: 2.261.0
         version: 2.261.0(constructs@10.7.1)
@@ -304,9 +304,15 @@ importers:
       '@hono/mcp':
         specifier: 0.3.1
         version: 0.3.1(@modelcontextprotocol/sdk@1.30.0(zod@4.4.3))(hono-rate-limiter@0.5.3(hono@4.12.31))(hono@4.12.31)(zod@4.4.3)
-      '@modelcontextprotocol/sdk':
-        specifier: 1.30.0
-        version: 1.30.0(zod@4.4.3)
+      '@modelcontextprotocol/core':
+        specifier: ^2.0.0
+        version: 2.0.0
+      '@modelcontextprotocol/hono':
+        specifier: ^2.0.0
+        version: 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.12.31)
+      '@modelcontextprotocol/server':
+        specifier: 2.0.0
+        version: 2.0.0
       hono:
         specifier: 4.12.31
         version: 4.12.31
@@ -619,6 +625,17 @@ packages:
     resolution: {integrity: sha512-bV0Tgo9K4hfPCek+aMAn81RppFKv2ySDQeMoSZuvTASywNTnVJCArCZE2FWqpvIatKu7VMRLWlR1EazvVhDyhQ==}
     engines: {node: '>=18.18'}
 
+  '@modelcontextprotocol/core@2.0.0':
+    resolution: {integrity: sha512-pJCEwGG7Lfr/+PQp9ZTwKXNeO5wzbfKL7H3MYpCorM4oFBoQrdjnBgEoqG+RjhsvS1FKrDbKux+M1HhlnGWqcA==}
+    engines: {node: '>=20'}
+
+  '@modelcontextprotocol/hono@2.0.0':
+    resolution: {integrity: sha512-lKCSXRusLxpX63G+6og9ewcRkqVbjB2xSxpvU/VJhxcUkpvGgpDrmcgNRQ4dTapGr8AspNFdRBdmJc500Vhl/A==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      '@modelcontextprotocol/server': ^2.0.0
+      hono: ^4.11.4
+
   '@modelcontextprotocol/sdk@1.30.0':
     resolution: {integrity: sha512-xKd8OIzlqNzcqcNumGAa6g+PW2kjD5vrpcKOnfldAUPP3j7lnqMPwlTXQm8gF+UwH72z0lqaRbjr9hqGz0eITA==}
     engines: {node: '>=18'}
@@ -628,6 +645,10 @@ packages:
     peerDependenciesMeta:
       '@cfworker/json-schema':
         optional: true
+
+  '@modelcontextprotocol/server@2.0.0':
+    resolution: {integrity: sha512-YhHWdHfpFMQfd0prsEnxKeS3Qz3ytIGmsS0sth4KDjnacIT7hxk6hXHkJ9KysxlkvTM+WZAtQbbcUhdoP4Hvtw==}
+    engines: {node: '>=20'}
 
   '@napi-rs/wasm-runtime@1.1.6':
     resolution: {integrity: sha512-ZLv/JdUfkvOy9eCnnBaGfiO+XimbjebAeO+MRQqD/B+FR1tnRN0tpKSJHRbE8sFfS6aqsXZ67TQjfwfsxULVbg==}
@@ -1839,6 +1860,15 @@ snapshots:
 
   '@humanwhocodes/retry@0.4.3': {}
 
+  '@modelcontextprotocol/core@2.0.0':
+    dependencies:
+      zod: 4.4.3
+
+  '@modelcontextprotocol/hono@2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.12.31)':
+    dependencies:
+      '@modelcontextprotocol/server': 2.0.0
+      hono: 4.12.31
+
   '@modelcontextprotocol/sdk@1.30.0(zod@4.4.3)':
     dependencies:
       '@hono/node-server': 2.0.11(hono@4.12.31)
@@ -1860,6 +1890,11 @@ snapshots:
       zod-to-json-schema: 3.25.2(zod@4.4.3)
     transitivePeerDependencies:
       - supports-color
+
+  '@modelcontextprotocol/server@2.0.0':
+    dependencies:
+      '@modelcontextprotocol/core': 2.0.0
+      zod: 4.4.3
 
   '@napi-rs/wasm-runtime@1.1.6(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
