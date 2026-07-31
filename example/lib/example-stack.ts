@@ -19,7 +19,6 @@ export class ExampleStack extends cdk.Stack {
       ],
     });
 
-
     const mcpServerFunctionName = `${projectName}-mcp-server-example`;
     const mcpServerLogGroup = new cdk.aws_logs.LogGroup(this, 'McpServerFunctionLogGroup', {
       logGroupName: `/aws/lambda/${mcpServerFunctionName}`,
@@ -40,7 +39,7 @@ export class ExampleStack extends cdk.Stack {
       bundling: {
         // No externalModules since we want to bundle everything
         nodeModules: [
-          '@modelcontextprotocol/sdk',
+          '@modelcontextprotocol/server',
           'hono',
           'zod',
         ],
@@ -52,7 +51,7 @@ export class ExampleStack extends cdk.Stack {
         sourceMap: true, // ソースマップを有効化（デバッグ用）
         keepNames: true,
         format: cdk.aws_lambda_nodejs.OutputFormat.ESM,
-        target: 'node22', // Target Node.js 22.x
+        target: 'node24', // Target Node.js 24.x
         banner: 'import { createRequire } from \'module\';const require = createRequire(import.meta.url);',
       },
     });
@@ -66,7 +65,7 @@ export class ExampleStack extends cdk.Stack {
         allowMethods: cdk.aws_apigateway.Cors.ALL_METHODS,
       },
       deployOptions: {
-        stageName: 'v1',
+        stageName: 'v2',
       },
       endpointTypes: [cdk.aws_apigateway.EndpointType.REGIONAL],
     });

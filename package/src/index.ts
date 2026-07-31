@@ -11,7 +11,7 @@
 
 import { Logger } from '@aws-lambda-powertools/logger';
 import { McpServer, WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/server';
-import { createMcpHonoApp } from '@modelcontextprotocol/hono';
+import { createMcpHonoApp, CreateMcpHonoAppOptions } from '@modelcontextprotocol/hono';
 import { Context } from 'hono';
 import { BlankEnv, BlankInput } from 'hono/types';
 
@@ -30,32 +30,6 @@ declare module 'hono' {
     parsedBody: unknown;
   }
 }
-
-/**
- * 許可されていないHTTPメソッドに対するハンドラーです。
- *
- * @remarks
- * 405エラーのJSONレスポンスを返します。
- *
- * @param c Honoのコンテキスト
- * @returns 405エラーのJSONレスポンス
- * @private
- */
-const methodNotAllowedHandler = async (
-  c: Context<BlankEnv, '/mcp', BlankInput>,
-) => {
-  return c.json(
-    {
-      jsonrpc: '2.0',
-      error: {
-        code: -32000,
-        message: 'メソッドは許可されていません。',
-      },
-      id: null,
-    },
-    { status: 405 },
-  );
-};
 
 /**
  * サーバーエラー発生時の共通エラーハンドラーです。
@@ -176,21 +150,12 @@ const handleRequest = async (createMcpServer: () => McpServer, c: Context<BlankE
  * const app = createHonoApp(createMcpServer);
  * ```
  */
-export const createHonoApp = (createMcpServer: () => McpServer) => {
-  const app = createMcpHonoApp();
+export const createHonoApp = (createMcpServer: () => McpServer, options?: CreateMcpHonoAppOptions) => {
+  const app = createMcpHonoApp(options);
 
-  app.post('/mcp', async (c) => {
+  app.all('/mcp', async (c) => {
     return await handleRequest(createMcpServer, c);
   });
-
-  app.get('/mcp', async (c) => {
-    return await handleRequest(createMcpServer, c);
-  });
-
-  app.put('/mcp', methodNotAllowedHandler);
-  app.delete('/mcp', methodNotAllowedHandler);
-  app.patch('/mcp', methodNotAllowedHandler);
-  app.options('/mcp', methodNotAllowedHandler);
 
   return app;
 };

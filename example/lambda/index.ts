@@ -10,7 +10,8 @@ const createMcpServer = () => {
   const server = new McpServer({
     name: 'hello-server',
     version: '1.0.0',
-  });
+  },
+  );
 
   server.registerTool(
     'say_hello',
@@ -27,7 +28,9 @@ const createMcpServer = () => {
   );
   return server;
 };
-const app = createHonoApp(createMcpServer);
+const app = createHonoApp(createMcpServer, {
+  host: '0.0.0.0',
+});
 
 // Lambda handler
 export const handler = handle(app);
