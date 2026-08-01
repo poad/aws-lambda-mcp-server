@@ -1,5 +1,5 @@
 import { Logger } from '@aws-lambda-powertools/logger';
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp';
+import { McpServer } from '@modelcontextprotocol/server';
 import { handle } from 'hono/aws-lambda';
 import { z } from 'zod';
 import { createHonoApp } from 'aws-lambda-mcp-server';
@@ -10,13 +10,14 @@ const createMcpServer = () => {
   const server = new McpServer({
     name: 'hello-server',
     version: '1.0.0',
-  });
+  },
+  );
 
   server.registerTool(
     'say_hello',
     {
       description: 'Greets the user with a friendly message.',
-      inputSchema: { who: z.string() },
+      inputSchema: z.object({ who: z.string() }),
     },
     async ({ who }: { who: string }) => ({
       content: [{
@@ -27,7 +28,9 @@ const createMcpServer = () => {
   );
   return server;
 };
-const app = createHonoApp(createMcpServer);
+const app = createHonoApp(createMcpServer, {
+  host: '0.0.0.0',
+});
 
 // Lambda handler
 export const handler = handle(app);

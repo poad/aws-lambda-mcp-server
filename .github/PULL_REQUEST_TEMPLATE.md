@@ -1,14 +1,22 @@
 <!-- markdownlint-disable MD041 -->
+<!-- markdownlint-disable MD033 -->
 
 ## 概要
 
-概要を記述。
+概要を簡潔に記述。
 
 ## 変更点
+
+変更内容を簡潔に記述。
+
+<details>
+<summary>修正ファイル一覧</summary>
 
 | 追加・変更・削除したファイル (リポジトリルートからの相対パス) | 変更内容 | 事由 |
 | --------------------------------------------------- | ------- | --- |
 | 変更したファイルのリポジトリルートからの相対パス            | どんな変更を行なったのか？ | 何故、変更が必要だったのか？ |
+
+</details>
 
 ## 関連Issue
 
@@ -18,7 +26,7 @@
 
 - [ ] (Typescriptの場合) `pnpm audit --fix` で脆弱性を修正済みか？
 - [ ] (Typescriptの場合) `pnpm lint-fix` でコードスタイルは修正済みか？
-- [ ] (Markdownの場合)`npx -y markdownlint-cli2@latest . --fix` で Markdown の lint は修正済みか？
+- [ ] (Markdownの場合)`pnx markdownlint-cli2@latest . --fix` で Markdown の lint は修正済みか？
 
 ## 特記事項
 
