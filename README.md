@@ -24,7 +24,7 @@ npm install aws-lambda-mcp-server
 TypeScriptでの利用例です。
 
 ```typescript
-import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
+import { McpServer } from '@modelcontextprotocol/server';
 import { createHonoApp } from 'aws-lambda-mcp-server';
 import { handle } from 'hono/aws-lambda';
 import { z } from 'zod';

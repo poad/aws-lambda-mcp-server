@@ -29,7 +29,7 @@ import { z } from 'zod';
 const createMcpServer = () => {
   const server = new McpServer({
     name: 'my-mcp-server',
-    version: '1.0.0',
+    version: '2.0.0',
   });
 
   // MCPサーバーのインスタンスにToolsやResourcesなどを設定する

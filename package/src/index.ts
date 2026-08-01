@@ -141,13 +141,16 @@ const handleRequest = async (createMcpServer: () => McpServer, c: Context<BlankE
  * POST/GET /mcp でMCPリクエストを受け付け、他のHTTPメソッドは405を返します。
  *
  * @param createMcpServer MCPサーバーインスタンスを生成するファクトリ関数
+ * @param options `@modelcontextprotocol/hono` パッケージの `createMcpHonoApp()` 関数に関数に渡す options
  * @returns Honoアプリケーションインスタンス
  *
  * @example
  * ```ts
  * import { createHonoApp } from '...';
  * import { createMcpServer } from './your-mcp-server';
- * const app = createHonoApp(createMcpServer);
+ * const app = createHonoApp(createMcpServer, {
+ *   host: '0.0.0.0', // 認証・認可を無効にする
+ * });
  * ```
  */
 export const createHonoApp = (createMcpServer: () => McpServer, options?: CreateMcpHonoAppOptions) => {
