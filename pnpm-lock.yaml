@@ -226,14 +226,14 @@ importers:
         specifier: 2.0.0
         version: 2.0.0
       aws-cdk-lib:
-        specifier: 2.262.1
-        version: 2.262.1(constructs@10.7.1)
+        specifier: 2.262.2
+        version: 2.262.2(constructs@10.7.2)
       aws-lambda-mcp-server:
         specifier: workspace:*
         version: link:../package
       constructs:
-        specifier: 10.7.1
-        version: 10.7.1
+        specifier: 10.7.2
+        version: 10.7.2
       hono:
         specifier: 4.12.34
         version: 4.12.34
@@ -848,8 +848,8 @@ packages:
   ajv@6.15.0:
     resolution: {integrity: sha512-fgFx7Hfoq60ytK2c7DhnF8jIvzYgOMxfugjLOSMHjLIPgenqa7S7oaagATUq99mV6IYvN2tRmC0wnTYX6iPbMw==}
 
-  aws-cdk-lib@2.262.1:
-    resolution: {integrity: sha512-B6YP4r6ojUZCDhl+qBu/CrWzcipR8sIgshcqYvgw013sghPXmVkYdJ3yuI9+DKML3YLSjQrHy1nGJs+Nqq7JCg==}
+  aws-cdk-lib@2.262.2:
+    resolution: {integrity: sha512-lWQRW/AHxB4gMgkRmfYQIKWqiJLD4whkl7sQF3c26eK1DVt1Jw9rNBSFvVQ+DZddxxnifNGan/i97YgsNpgOeQ==}
     engines: {node: '>= 20.0.0'}
     peerDependencies:
       constructs: ^10.5.0
@@ -884,8 +884,8 @@ packages:
     resolution: {integrity: sha512-0h+uSNtQGW3D98eQt3jJ8L06Fves8hncB4V/PKdw/Qb8Hnk19VaKuTr55UNRYiSoVa7WwrFls+rh3ux9agmkeQ==}
     engines: {node: '>= 12.0.0'}
 
-  constructs@10.7.1:
-    resolution: {integrity: sha512-ulK25Sg2Nv1jW+A9VeV7fu9GFN9KdVTNWdXMoapNRwqkQzSdToro/Tttk3Ak5BGI80NRA/d2nSzKnoZ27LizLw==}
+  constructs@10.7.2:
+    resolution: {integrity: sha512-vA7JOqvO/xwq2HBCuq3qc6V2R9mHZCxJ8HPoucUcUWJY88YULe7bzMcsdBy27/gJJIphZi73U1oIXDY2Eqg6nA==}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -1745,12 +1745,12 @@ snapshots:
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
 
-  aws-cdk-lib@2.262.1(constructs@10.7.1):
+  aws-cdk-lib@2.262.2(constructs@10.7.2):
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.282
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.2
       '@aws-cdk/cloud-assembly-schema': 54.14.0
-      constructs: 10.7.1
+      constructs: 10.7.2
 
   aws-cdk@2.1133.0: {}
 
@@ -1762,7 +1762,7 @@ snapshots:
 
   comment-parser@1.4.7: {}
 
-  constructs@10.7.1: {}
+  constructs@10.7.2: {}
 
   cross-spawn@7.0.6:
     dependencies:
