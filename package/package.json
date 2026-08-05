@@ -60,14 +60,14 @@
     "@aws-lambda-powertools/logger": "2.34.0",
     "@hono/mcp": "0.3.1",
     "@modelcontextprotocol/sdk": "1.30.0",
-    "hono": "4.12.31",
+    "hono": "4.12.34",
     "zod": "4.4.3"
   },
   "peerDependencies": {
     "@aws-lambda-powertools/logger": "^2.34.0",
     "@hono/mcp": "^0.3.1",
     "@modelcontextprotocol/sdk": "^1.30.0",
-    "hono": "^4.12.31",
+    "hono": "^4.12.34",
     "zod": "^3.25 || ^4.0"
   }
 }
