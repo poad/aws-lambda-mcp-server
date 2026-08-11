@@ -52,16 +52,16 @@
     "eslint-plugin-import-x": "4.17.1",
     "eslint-plugin-promise": "7.3.0",
     "jiti": "2.7.0",
-    "tsx": "4.23.4",
+    "tsx": "4.23.5",
     "typescript": "6.0.3",
-    "typescript-eslint": "8.65.0"
+    "typescript-eslint": "8.66.0"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "2.34.0",
     "@modelcontextprotocol/core": "2.0.0",
     "@modelcontextprotocol/hono": "2.0.0",
     "@modelcontextprotocol/server": "2.0.0",
-    "hono": "4.12.34",
+    "hono": "4.13.0",
     "zod": "4.4.3"
   },
   "peerDependencies": {
