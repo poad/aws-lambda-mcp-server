@@ -37,8 +37,8 @@
   "author": "poad",
   "license": "ISC",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc -w",
+    "build": "node_modules/@typescript/native/bin/tsc",
+    "watch": "node_modules/@typescript/native/bin/tsc -w",
     "test": "vitest run --passWithNoTests",
     "lint": "eslint .",
     "lint-fix": "eslint . --fix"
@@ -46,14 +46,15 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@stylistic/eslint-plugin": "5.10.0",
-    "@types/node": "26.1.2",
-    "eslint": "10.8.0",
+    "@types/node": "26.2.0",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "10.8.1",
     "eslint-import-resolver-typescript": "4.4.5",
     "eslint-plugin-import-x": "4.17.1",
     "eslint-plugin-promise": "7.3.0",
     "jiti": "2.7.0",
-    "tsx": "4.23.9",
-    "typescript": "6.0.3",
+    "tsx": "4.23.11",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "8.66.0"
   },
   "dependencies": {
@@ -61,7 +62,7 @@
     "@modelcontextprotocol/core": "2.0.0",
     "@modelcontextprotocol/hono": "2.0.0",
     "@modelcontextprotocol/server": "2.0.0",
-    "hono": "4.13.0",
+    "hono": "4.13.1",
     "zod": "4.4.3"
   },
   "peerDependencies": {
