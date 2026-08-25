@@ -22,7 +22,7 @@
     "@types/aws-lambda": "8.10.162",
     "@types/node": "26.2.0",
     "@typescript/native": "npm:typescript@^7.0.2",
-    "aws-cdk": "2.1136.0",
+    "aws-cdk": "2.1137.0",
     "esbuild": "0.28.2",
     "eslint": "10.8.1",
     "eslint-import-resolver-typescript": "4.4.5",
@@ -36,12 +36,12 @@
     "typescript-eslint": "8.67.0"
   },
   "dependencies": {
-    "@aws-lambda-powertools/logger": "2.34.0",
+    "@aws-lambda-powertools/logger": "2.35.0",
     "@modelcontextprotocol/server": "2.0.0",
     "aws-cdk-lib": "2.265.0",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "10.8.1",
-    "hono": "4.13.2",
+    "hono": "4.13.3",
     "zod": "4.4.3"
   }
 }
