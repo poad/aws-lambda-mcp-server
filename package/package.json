@@ -62,13 +62,13 @@
     "@modelcontextprotocol/core": "2.0.0",
     "@modelcontextprotocol/hono": "2.0.0",
     "@modelcontextprotocol/server": "2.0.0",
-    "hono": "4.13.2",
+    "hono": "4.13.3",
     "zod": "4.4.3"
   },
   "peerDependencies": {
     "@aws-lambda-powertools/logger": "^2.34.0",
     "@modelcontextprotocol/server": "^2.0.0",
-    "hono": "^4.12.34",
+    "hono": "^4.13.3",
     "zod": "^3.25 || ^4.0"
   }
 }

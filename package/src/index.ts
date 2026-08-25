@@ -12,8 +12,8 @@
 import { Logger } from '@aws-lambda-powertools/logger';
 import { McpServer, WebStandardStreamableHTTPServerTransport } from '@modelcontextprotocol/server';
 import { createMcpHonoApp, CreateMcpHonoAppOptions } from '@modelcontextprotocol/hono';
-import { Context } from 'hono';
-import { BlankEnv, BlankInput } from 'hono/types';
+import { Context, Hono } from 'hono';
+import { BlankEnv, BlankInput, BlankSchema, Env } from 'hono/types';
 
 /**
  * ロガーインスタンス（AWS Lambda Powertools）。
@@ -107,7 +107,7 @@ const closeResources = async (server: McpServer, transport: WebStandardStreamabl
  * @returns MCPレスポンス
  * @private
  */
-const handleRequest = async (createMcpServer: () => McpServer, c: Context<BlankEnv, '/mcp', BlankInput>) => {
+const handleRequest = async (createMcpServer: () => McpServer, c: Context<Env, '/mcp', BlankInput>) => {
   const transport = new WebStandardStreamableHTTPServerTransport({
     sessionIdGenerator: undefined, // セッションIDを生成しない（ステートレスモード）
     enableJsonResponse: true,
@@ -153,7 +153,7 @@ const handleRequest = async (createMcpServer: () => McpServer, c: Context<BlankE
  * });
  * ```
  */
-export const createHonoApp = (createMcpServer: () => McpServer, options?: CreateMcpHonoAppOptions) => {
+export const createHonoApp = (createMcpServer: () => McpServer, options?: CreateMcpHonoAppOptions): Hono<Env, BlankSchema, '/'> => {
   const app = createMcpHonoApp(options);
 
   app.all('/mcp', async (c) => {

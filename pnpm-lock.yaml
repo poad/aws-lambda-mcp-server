@@ -221,8 +221,8 @@ importers:
   example:
     dependencies:
       '@aws-lambda-powertools/logger':
-        specifier: 2.34.0
-        version: 2.34.0
+        specifier: 2.35.0
+        version: 2.35.0
       '@modelcontextprotocol/server':
         specifier: 2.0.0
         version: 2.0.0
@@ -236,8 +236,8 @@ importers:
         specifier: 10.8.1
         version: 10.8.1
       hono:
-        specifier: 4.13.2
-        version: 4.13.2
+        specifier: 4.13.3
+        version: 4.13.3
       zod:
         specifier: 4.4.3
         version: 4.4.3
@@ -247,7 +247,7 @@ importers:
         version: 10.0.1(eslint@10.8.1(jiti@2.7.0))
       '@hono/node-server':
         specifier: 2.1.1
-        version: 2.1.1(hono@4.13.2)
+        version: 2.1.1(hono@4.13.3)
       '@stylistic/eslint-plugin':
         specifier: 5.10.0
         version: 5.10.0(eslint@10.8.1(jiti@2.7.0))
@@ -261,8 +261,8 @@ importers:
         specifier: npm:typescript@^7.0.2
         version: typescript@7.0.2
       aws-cdk:
-        specifier: 2.1136.0
-        version: 2.1136.0
+        specifier: 2.1137.0
+        version: 2.1137.0
       esbuild:
         specifier: 0.28.2
         version: 0.28.2
@@ -307,13 +307,13 @@ importers:
         version: 2.0.0
       '@modelcontextprotocol/hono':
         specifier: 2.0.0
-        version: 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.2)
+        version: 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.3)
       '@modelcontextprotocol/server':
         specifier: 2.0.0
         version: 2.0.0
       hono:
-        specifier: 4.13.2
-        version: 4.13.2
+        specifier: 4.13.3
+        version: 4.13.3
       zod:
         specifier: 4.4.3
         version: 4.4.3
@@ -373,10 +373,24 @@ packages:
   '@aws-lambda-powertools/commons@2.34.0':
     resolution: {integrity: sha512-ga89L3UznCwkApsrVAYGywifAh9PpccXZAVE053B6IdKvZrwjv+L+ja1WyzU9sy9UR3wPEdh0LFiUCRZRhTfvQ==}
 
+  '@aws-lambda-powertools/commons@2.35.0':
+    resolution: {integrity: sha512-DPD5fnl7V1xSPJuKGQ8KETp+nPmcIw8mYWEdNfnuTr/zNDyTkiX2l3QNUPlrtpOPtJ7r+UGSbXCgKPPlXN27Bw==}
+
   '@aws-lambda-powertools/logger@2.34.0':
     resolution: {integrity: sha512-FIWQcdX/dqfKE+4H8N9w7y7/3/ANmDpKDgMlMc+yPNx2XDpKK6Ou1zLFYoNt5mV6dOZunFQcKbRWUy6zIDdE0w==}
     peerDependencies:
       '@aws-lambda-powertools/jmespath': 2.34.0
+      '@middy/core': 4.x || 5.x || 6.x || 7.x
+    peerDependenciesMeta:
+      '@aws-lambda-powertools/jmespath':
+        optional: true
+      '@middy/core':
+        optional: true
+
+  '@aws-lambda-powertools/logger@2.35.0':
+    resolution: {integrity: sha512-ituCLfspm7IYfXH3o2W67anH3YgKh9N3wDqjsyW6RCw0BAv+vgSrIRbGBB+UqiT9DPU8HJTfoSs9JNYijlQS3g==}
+    peerDependencies:
+      '@aws-lambda-powertools/jmespath': 2.35.0
       '@middy/core': 4.x || 5.x || 6.x || 7.x
     peerDependenciesMeta:
       '@aws-lambda-powertools/jmespath':
@@ -999,8 +1013,8 @@ packages:
       - yaml
       - mime-types
 
-  aws-cdk@2.1136.0:
-    resolution: {integrity: sha512-n6kCL9R9uuvb7WXEwiSs3rYGwnTy9AHHmxOT5Pj5/++E4PYz2bLDXIxzoiOMIj5maoyC52PTe/0GezFV+O0ILQ==}
+  aws-cdk@2.1137.0:
+    resolution: {integrity: sha512-SRy2df/5cqGvq8ncph1m93rWEh3RGbvP6uwElw+W0x135vZDzTpfbuq2L8oAHwK2yDt3RNS5sb7Phwb7xqQP2g==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
 
@@ -1187,8 +1201,8 @@ packages:
     resolution: {integrity: sha512-XxwI8EOhVQgWp6iDL+3b0r86f4d6AX6zSU55HfB4ydCEuXLXc5FcYeOu+nnGftS4TEju/11rt4KJPTMgbfmv4A==}
     engines: {node: '>=10.13.0'}
 
-  hono@4.13.2:
-    resolution: {integrity: sha512-JydRilDRkYBQMt9qR9U92mXxmbGqsqSn/IKOrh4e7/gEbn+0zSr8igTu0obwJoNGN4sez28DIql7FBHWydoJpA==}
+  hono@4.13.3:
+    resolution: {integrity: sha512-r8AO2mYHoLxSHkgafNeC/BXyb2vWRxD3jem4Ts+ptav8oTG5FIRifAjuJEmZI4bSvvc2ns0GxmIYiZnHqN3mMw==}
     engines: {node: '>=16.9.0'}
 
   ignore@5.3.2:
@@ -1505,9 +1519,18 @@ snapshots:
     dependencies:
       '@aws/lambda-invoke-store': 0.3.0
 
+  '@aws-lambda-powertools/commons@2.35.0':
+    dependencies:
+      '@aws/lambda-invoke-store': 0.3.0
+
   '@aws-lambda-powertools/logger@2.34.0':
     dependencies:
       '@aws-lambda-powertools/commons': 2.34.0
+      '@aws/lambda-invoke-store': 0.3.0
+
+  '@aws-lambda-powertools/logger@2.35.0':
+    dependencies:
+      '@aws-lambda-powertools/commons': 2.35.0
       '@aws/lambda-invoke-store': 0.3.0
 
   '@aws/lambda-invoke-store@0.3.0': {}
@@ -1640,9 +1663,9 @@ snapshots:
       '@eslint/core': 1.2.1
       levn: 0.4.1
 
-  '@hono/node-server@2.1.1(hono@4.13.2)':
+  '@hono/node-server@2.1.1(hono@4.13.3)':
     dependencies:
-      hono: 4.13.2
+      hono: 4.13.3
 
   '@humanfs/core@0.19.2':
     dependencies:
@@ -1664,10 +1687,10 @@ snapshots:
     dependencies:
       zod: 4.4.3
 
-  '@modelcontextprotocol/hono@2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.2)':
+  '@modelcontextprotocol/hono@2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.3)':
     dependencies:
       '@modelcontextprotocol/server': 2.0.0
-      hono: 4.13.2
+      hono: 4.13.3
 
   '@modelcontextprotocol/server@2.0.0':
     dependencies:
@@ -1953,7 +1976,7 @@ snapshots:
       '@aws-cdk/cloud-assembly-schema': 54.19.0
       constructs: 10.8.1
 
-  aws-cdk@2.1136.0: {}
+  aws-cdk@2.1137.0: {}
 
   balanced-match@4.0.4: {}
 
@@ -2168,7 +2191,7 @@ snapshots:
     dependencies:
       is-glob: 4.0.3
 
-  hono@4.13.2: {}
+  hono@4.13.3: {}
 
   ignore@5.3.2: {}
 
