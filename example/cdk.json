@@ -1,5 +1,5 @@
 {
-  "app": "npx tsx bin/example.ts",
+  "app": "pnx --allow-build=esbuild tsx bin/example.ts",
   "watch": {
     "include": [
       "**"

@@ -77,4 +77,4 @@ jobs:
     - name: deploy
       working-directory: ./example
       run: |
-        pnpm dlx aws-cdk@latest deploy --require-approval=never
+        pnx --allow-build=esbuild aws-cdk@latest deploy --require-approval=never
