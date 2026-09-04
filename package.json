@@ -21,7 +21,7 @@
   "devEngines": {
     "packageManager": {
       "name": "pnpm",
-      "version": "~12.3.3",
+      "version": "~12.3.4",
       "onFail": "download"
     },
     "runtime": {
@@ -30,5 +30,11 @@
       "onFail": "download"
     }
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": ">=24",
+    "pnpm": ">=11",
+    "npm": "echo Please use pnpm!",
+    "yarn": "echo Please use pnpm!"
+  }
 }
