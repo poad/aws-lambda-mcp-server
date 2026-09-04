@@ -1,61 +1,47 @@
 {
   "name": "aws-lambda-mcp-server",
   "version": "2.0.1",
-  "description": "A Hono wrapper for building an MCP (Model Context Protocol) Server that runs on AWS Lambda functions.",
-  "type": "module",
-  "keywords": [
-    "mcp-server",
-    "modelcontextprotocol",
-    "mcp",
-    "lambda"
-  ],
   "private": false,
-  "sideEffects": false,
+  "description": "A Hono wrapper for building an MCP (Model Context Protocol) Server that runs on AWS Lambda functions.",
+  "keywords": [
+    "lambda",
+    "mcp",
+    "mcp-server",
+    "modelcontextprotocol"
+  ],
+  "homepage": "https://github.com/poad/aws-lambda-mcp-server#readme",
+  "license": "ISC",
+  "author": "poad",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poad/aws-lambda-mcp-server.git"
+  },
   "files": [
     "dist",
     "package.json",
     "README.md"
   ],
-  "homepage": "https://github.com/poad/aws-lambda-mcp-server#readme",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/poad/aws-lambda-mcp-server.git"
-  },
-  "publishConfig": {
-    "main": "./dist/index.js",
-    "typings": "./dist/index.d.ts"
-  },
+  "type": "module",
+  "sideEffects": false,
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
       "default": "./dist/index.js"
     }
   },
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "main": "./dist/index.js",
-  "author": "poad",
-  "license": "ISC",
-  "scripts": {
-    "build": "node_modules/@typescript/native/bin/tsc",
-    "watch": "node_modules/@typescript/native/bin/tsc -w",
-    "test": "vitest run --passWithNoTests",
-    "lint": "eslint .",
-    "lint-fix": "eslint . --fix"
+  "publishConfig": {
+    "main": "./dist/index.js",
+    "typings": "./dist/index.d.ts"
   },
-  "devDependencies": {
-    "@eslint/js": "10.0.1",
-    "@stylistic/eslint-plugin": "5.10.0",
-    "@types/node": "26.4.0",
-    "@typescript/native": "npm:typescript@^7.0.2",
-    "eslint": "10.9.1",
-    "eslint-import-resolver-typescript": "4.4.5",
-    "eslint-plugin-import-x": "4.17.1",
-    "eslint-plugin-promise": "7.3.0",
-    "jiti": "2.7.0",
-    "tsx": "4.23.12",
-    "typescript": "npm:@typescript/typescript6@^6.0.2",
-    "typescript-eslint": "8.68.0"
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "vitest run --passWithNoTests",
+    "lint": "oxfmt --check && oxlint .",
+    "lint-fix": "oxfmt && oxlint . --fix"
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "2.35.0",
@@ -64,6 +50,13 @@
     "@modelcontextprotocol/server": "2.0.0",
     "hono": "4.13.5",
     "zod": "4.4.3"
+  },
+  "devDependencies": {
+    "@types/node": "26.4.0",
+    "oxfmt": "^0.65.0",
+    "oxlint": "^1.80.0",
+    "tsx": "4.23.12",
+    "typescript": "^7.0.2"
   },
   "peerDependencies": {
     "@aws-lambda-powertools/logger": "^2.34.0",

@@ -3,9 +3,7 @@
     "target": "ES2024",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "lib": [
-      "es2024"
-    ],
+    "lib": ["es2024"],
     "declaration": true,
     "strict": true,
     "noImplicitAny": true,
@@ -24,16 +22,8 @@
     "declarationMap": true,
     "rootDir": "./src",
     "outDir": "dist",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ]
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node"]
   },
-  "exclude": [
-    "node_modules",
-    "*.config.ts",
-    "dist"
-  ]
+  "exclude": ["node_modules", "*.config.ts", "dist"]
 }

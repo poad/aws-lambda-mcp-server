@@ -15,7 +15,9 @@ export class ExampleStack extends cdk.Stack {
     const lambdaRole = new cdk.aws_iam.Role(this, 'LambdaRole', {
       assumedBy: new cdk.aws_iam.ServicePrincipal('lambda.amazonaws.com'),
       managedPolicies: [
-        cdk.aws_iam.ManagedPolicy.fromAwsManagedPolicyName('service-role/AWSLambdaBasicExecutionRole'),
+        cdk.aws_iam.ManagedPolicy.fromAwsManagedPolicyName(
+          'service-role/AWSLambdaBasicExecutionRole',
+        ),
       ],
     });
 
@@ -38,21 +40,15 @@ export class ExampleStack extends cdk.Stack {
       memorySize: 128,
       bundling: {
         // No externalModules since we want to bundle everything
-        nodeModules: [
-          '@modelcontextprotocol/server',
-          'hono',
-          'zod',
-        ],
-        externalModules: [
-          'dotenv',
-          '@hono/node-server',
-        ],
+        nodeModules: ['@modelcontextprotocol/server', 'hono', 'zod'],
+        externalModules: ['dotenv', '@hono/node-server'],
         // minify: true, // コードの最小化
         sourceMap: true, // ソースマップを有効化（デバッグ用）
         keepNames: true,
         format: cdk.aws_lambda_nodejs.OutputFormat.ESM,
         target: 'node24', // Target Node.js 24.x
-        banner: 'import { createRequire } from \'module\';const require = createRequire(import.meta.url);',
+        banner:
+          "import { createRequire } from 'module';const require = createRequire(import.meta.url);",
       },
     });
 

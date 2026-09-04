@@ -1,8 +1,8 @@
 import { Logger } from '@aws-lambda-powertools/logger';
 import { McpServer } from '@modelcontextprotocol/server';
+import { createHonoApp } from 'aws-lambda-mcp-server';
 import { handle } from 'hono/aws-lambda';
 import { z } from 'zod';
-import { createHonoApp } from 'aws-lambda-mcp-server';
 
 const logger = new Logger();
 
@@ -10,8 +10,7 @@ const createMcpServer = () => {
   const server = new McpServer({
     name: 'hello-server',
     version: '1.0.0',
-  },
-  );
+  });
 
   server.registerTool(
     'say_hello',
@@ -20,10 +19,12 @@ const createMcpServer = () => {
       inputSchema: z.object({ who: z.string() }),
     },
     async ({ who }: { who: string }) => ({
-      content: [{
-        type: 'text',
-        text: `${who} さん、こんにちは！`,
-      }],
+      content: [
+        {
+          type: 'text',
+          text: `${who} さん、こんにちは！`,
+        },
+      ],
     }),
   );
   return server;
@@ -45,7 +46,9 @@ if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
     const parsePort = (value: string | undefined): number => {
       const result = portSchema.safeParse(value);
       if (!result.success) {
-        logger.warn(`無効または要件で許可されていないポート値: ${result.error.issues[0].message} (デフォルト: 8080に設定)`);
+        logger.warn(
+          `無効または要件で許可されていないポート値: ${result.error.issues[0].message} (デフォルト: 8080に設定)`,
+        );
         return 8080;
       }
       return result.data;
@@ -56,12 +59,15 @@ if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
     const port = parsePort(process.env.PORT);
 
     try {
-      const server = serve({
-        fetch: app.fetch,
-        port,
-      }, (info) => {
-        logger.info(`MCP サーバーがポート ${info.port} でリッスン中`);
-      });
+      const server = serve(
+        {
+          fetch: app.fetch,
+          port,
+        },
+        (info) => {
+          logger.info(`MCP サーバーがポート ${info.port} でリッスン中`);
+        },
+      );
       // Graceful shutdown
       const shutdown = () => {
         logger.info('サーバーをシャットダウンしています...');

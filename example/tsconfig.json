@@ -3,9 +3,7 @@
     "target": "ES2024",
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
-    "lib": [
-      "es2024"
-    ],
+    "lib": ["es2024"],
     "declaration": false,
     "strict": true,
     "noImplicitAny": true,
@@ -22,19 +20,11 @@
     "strictPropertyInitialization": false,
     "skipLibCheck": true,
     "outDir": "dist",
-    "typeRoots": [
-      "./node_modules/@types"
-    ],
-    "types": [
-      "node"
-    ],
+    "typeRoots": ["./node_modules/@types"],
+    "types": ["node"],
     "paths": {
       "aws-lambda-mcp-server": ["../../package"]
     }
   },
-  "exclude": [
-    "node_modules",
-    "*.config.ts",
-    "dist"
-  ]
+  "exclude": ["node_modules", "*.config.ts", "dist"]
 }

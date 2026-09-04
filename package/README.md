@@ -33,16 +33,14 @@ const createMcpServer = () => {
   });
 
   // MCPサーバーのインスタンスにToolsやResourcesなどを設定する
-  server.tool(
-    'say_hello',
-    { who: z.string() },
-    async ({ who }) => ({
-      content: [{
+  server.tool('say_hello', { who: z.string() }, async ({ who }) => ({
+    content: [
+      {
         type: 'text',
-        text: `${who} さん、こんにちは！`
-      }]
-    })
-  );
+        text: `${who} さん、こんにちは！`,
+      },
+    ],
+  }));
   return server;
 };
 
