@@ -26,8 +26,8 @@
   },
   "devDependencies": {
     "@hono/node-server": "2.1.1",
-    "@types/aws-lambda": "8.10.162",
-    "@types/node": "26.4.0",
+    "@types/aws-lambda": "8.10.163",
+    "@types/node": "26.4.1",
     "aws-cdk": "2.1139.0",
     "esbuild": "0.28.2",
     "eslint": "10.9.1",
