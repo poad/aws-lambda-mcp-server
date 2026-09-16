@@ -28,11 +28,11 @@
     "@hono/node-server": "2.1.1",
     "@types/aws-lambda": "8.10.163",
     "@types/node": "26.5.0",
-    "aws-cdk": "2.1140.0",
+    "aws-cdk": "2.1141.0",
     "esbuild": "0.28.2",
     "oxfmt": "^0.67.0",
     "oxlint": "^1.82.0",
-    "oxlint-plugin-awscdk": "^1.0.1",
+    "oxlint-plugin-awscdk": "^1.0.3",
     "tsx": "4.23.13",
     "typescript": "^7.0.2"
   }
