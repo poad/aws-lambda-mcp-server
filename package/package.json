@@ -49,7 +49,7 @@
     "@modelcontextprotocol/hono": "2.0.0",
     "@modelcontextprotocol/server": "2.0.0",
     "hono": "4.13.7",
-    "zod": "4.6.1"
+    "zod": "4.6.4"
   },
   "devDependencies": {
     "@types/node": "26.5.1",
