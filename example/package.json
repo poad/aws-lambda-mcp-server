@@ -22,7 +22,7 @@
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "10.8.1",
     "hono": "4.13.7",
-    "zod": "4.6.4"
+    "zod": "4.6.5"
   },
   "devDependencies": {
     "@hono/node-server": "2.1.1",
@@ -30,8 +30,8 @@
     "@types/node": "26.5.1",
     "aws-cdk": "2.1141.0",
     "esbuild": "0.28.2",
-    "oxfmt": "^0.67.0",
-    "oxlint": "^1.82.0",
+    "oxfmt": "^0.68.0",
+    "oxlint": "^1.83.0",
     "oxlint-plugin-awscdk": "^1.0.3",
     "tsx": "4.23.13",
     "typescript": "^7.0.2"
