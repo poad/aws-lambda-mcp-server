@@ -21,13 +21,13 @@
     "aws-cdk-lib": "2.269.0",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "10.8.1",
-    "hono": "4.13.7",
+    "hono": "4.13.8",
     "zod": "4.6.5"
   },
   "devDependencies": {
     "@hono/node-server": "2.1.1",
     "@types/aws-lambda": "8.10.163",
-    "@types/node": "26.5.1",
+    "@types/node": "26.6.0",
     "aws-cdk": "2.1141.0",
     "esbuild": "0.28.2",
     "oxfmt": "^0.68.0",
