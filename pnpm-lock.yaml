@@ -191,21 +191,21 @@ importers:
         specifier: 10.8.1
         version: 10.8.1
       hono:
-        specifier: 4.13.7
-        version: 4.13.7
+        specifier: 4.13.8
+        version: 4.13.8
       zod:
         specifier: 4.6.5
         version: 4.6.5
     devDependencies:
       '@hono/node-server':
         specifier: 2.1.1
-        version: 2.1.1(hono@4.13.7)
+        version: 2.1.1(hono@4.13.8)
       '@types/aws-lambda':
         specifier: 8.10.163
         version: 8.10.163
       '@types/node':
-        specifier: 26.5.1
-        version: 26.5.1
+        specifier: 26.6.0
+        version: 26.6.0
       aws-cdk:
         specifier: 2.1141.0
         version: 2.1141.0
@@ -238,20 +238,20 @@ importers:
         version: 2.0.0
       '@modelcontextprotocol/hono':
         specifier: 2.0.0
-        version: 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.7)
+        version: 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.8)
       '@modelcontextprotocol/server':
         specifier: 2.0.0
         version: 2.0.0
       hono:
-        specifier: 4.13.7
-        version: 4.13.7
+        specifier: 4.13.8
+        version: 4.13.8
       zod:
         specifier: 4.6.5
         version: 4.6.5
     devDependencies:
       '@types/node':
-        specifier: 26.5.1
-        version: 26.5.1
+        specifier: 26.6.0
+        version: 26.6.0
       oxfmt:
         specifier: ^0.68.0
         version: 0.68.0
@@ -812,8 +812,8 @@ packages:
   '@types/aws-lambda@8.10.163':
     resolution: {integrity: sha512-+4zuoEB3S8RIhimtOFT7zAEk2SbpwrKjjGl9CyYnQR6k08uynxfauIIB0pDU1ssr05F8oyGiETwpn+8eXZMqPw==}
 
-  '@types/node@26.5.1':
-    resolution: {integrity: sha512-CzNm2FezW4VR/LjG6yUdiEgLE/rAQ9Slj5gCu/C2VrdcW7I0ahNZ8DRbHT7zOZ6r3ONgd/bsQIeSaoDGrd1C6g==}
+  '@types/node@26.6.0':
+    resolution: {integrity: sha512-FWWQhDlKSnEJVe+CTJCQL8Fol7s1MKo3Ud0fjryxoOoH+hwMIPxol0MguYrLi2I0VvIFwOU2DwdWET2+px15qg==}
 
   '@typescript/typescript-aix-ppc64@7.0.2':
     resolution: {integrity: sha512-MTKKkWB7p/0E9xi1d1tHtZ5PiLkGEMIq88pK2CubZjOsLtYTLqhgIgi6zepFa+9GHZ6h05NMCkQxGKiPXMxXtQ==}
@@ -979,8 +979,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  hono@4.13.7:
-    resolution: {integrity: sha512-c8/gF9ac8Y78/agExVocyLevgR+JlpNB444Py0FSX8pJoPdYUfUzRcXtYEYGwt6l19qIlVZPN5Mfsw9jFShmQQ==}
+  hono@4.13.8:
+    resolution: {integrity: sha512-/Gng7NfoykZl2pjukW5Z6+8Yxm3BPRf86GTbQnt0SbySkvax4fyL4H3HhY1cCpBGmiW9XDRFzRV+CXK2W8QudQ==}
     engines: {node: '>=16.9.0'}
 
   node@runtime:24.21.0:
@@ -1303,18 +1303,18 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@hono/node-server@2.1.1(hono@4.13.7)':
+  '@hono/node-server@2.1.1(hono@4.13.8)':
     dependencies:
-      hono: 4.13.7
+      hono: 4.13.8
 
   '@modelcontextprotocol/core@2.0.0':
     dependencies:
       zod: 4.6.5
 
-  '@modelcontextprotocol/hono@2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.7)':
+  '@modelcontextprotocol/hono@2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.8)':
     dependencies:
       '@modelcontextprotocol/server': 2.0.0
-      hono: 4.13.7
+      hono: 4.13.8
 
   '@modelcontextprotocol/server@2.0.0':
     dependencies:
@@ -1457,7 +1457,7 @@ snapshots:
 
   '@types/aws-lambda@8.10.163': {}
 
-  '@types/node@26.5.1':
+  '@types/node@26.6.0':
     dependencies:
       undici-types: 8.9.0
 
@@ -1570,7 +1570,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  hono@4.13.7: {}
+  hono@4.13.8: {}
 
   node@runtime:24.21.0: {}
 
