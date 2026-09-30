@@ -179,8 +179,8 @@ importers:
         specifier: 2.35.0
         version: 2.35.0
       '@modelcontextprotocol/server':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 2.1.0
+        version: 2.1.0
       aws-cdk-lib:
         specifier: 2.270.0
         version: 2.270.0(constructs@10.8.1)
@@ -207,8 +207,8 @@ importers:
         specifier: 26.6.2
         version: 26.6.2
       aws-cdk:
-        specifier: 2.1142.0
-        version: 2.1142.0
+        specifier: 2.1143.0
+        version: 2.1143.0
       esbuild:
         specifier: 0.28.2
         version: 0.28.2
@@ -234,14 +234,14 @@ importers:
         specifier: 2.35.0
         version: 2.35.0
       '@modelcontextprotocol/core':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 2.1.0
+        version: 2.1.0
       '@modelcontextprotocol/hono':
-        specifier: 2.0.0
-        version: 2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.8)
+        specifier: 2.0.1
+        version: 2.0.1(@modelcontextprotocol/server@2.1.0)(hono@4.13.8)
       '@modelcontextprotocol/server':
-        specifier: 2.0.0
-        version: 2.0.0
+        specifier: 2.1.0
+        version: 2.1.0
       hono:
         specifier: 4.13.8
         version: 4.13.8
@@ -273,8 +273,8 @@ packages:
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.3':
     resolution: {integrity: sha512-98We1QWfin9vtuuQtNFhIIAEWb8CreyYTAP0Vn8HqSBoNiFJM9nZgifJeQawT9Wq0NX1HCNFlxCyTccIrK1PSA==}
 
-  '@aws-cdk/cloud-assembly-schema@54.24.0':
-    resolution: {integrity: sha512-9sH1pBpWuqZR/9rYAveNi62B/jDrc9BNOL83alD/wtIUSbRkg1aj6JX2r1cSugQwLBjCizQscQZgAb5wWnTTMg==}
+  '@aws-cdk/cloud-assembly-schema@54.25.0':
+    resolution: {integrity: sha512-aZkzPqWLg1Oozm53NeyrBZPguTq3e6v7NpQ3QOGULj0IIrodLzGPM7fmAvjcJcHzjtuZU9IP1gIY92nKIM+Bvw==}
     engines: {node: '>= 18.0.0'}
     bundledDependencies:
       - jsonschema
@@ -516,19 +516,19 @@ packages:
     peerDependencies:
       hono: ^4
 
-  '@modelcontextprotocol/core@2.0.0':
-    resolution: {integrity: sha512-pJCEwGG7Lfr/+PQp9ZTwKXNeO5wzbfKL7H3MYpCorM4oFBoQrdjnBgEoqG+RjhsvS1FKrDbKux+M1HhlnGWqcA==}
+  '@modelcontextprotocol/core@2.1.0':
+    resolution: {integrity: sha512-YdFj5gMRHr0gYNAhTbQDgjLHiEJdIAUYxomhKseUNye7ZGlISQmUoLh2sveFFCiQ7j2YMffT1kgSND0FSfIFjQ==}
     engines: {node: '>=20'}
 
-  '@modelcontextprotocol/hono@2.0.0':
-    resolution: {integrity: sha512-lKCSXRusLxpX63G+6og9ewcRkqVbjB2xSxpvU/VJhxcUkpvGgpDrmcgNRQ4dTapGr8AspNFdRBdmJc500Vhl/A==}
+  '@modelcontextprotocol/hono@2.0.1':
+    resolution: {integrity: sha512-97wyjSblCn09ku3VrSVSINFBiDFl9kjM0HRJ/ZlWhSpPbqoKOdVoWCYwoLSCpMxRPDtZCAXX9NqTTXiCOExH1w==}
     engines: {node: '>=20'}
     peerDependencies:
-      '@modelcontextprotocol/server': ^2.0.0
+      '@modelcontextprotocol/server': ^2.1.0
       hono: ^4.11.4
 
-  '@modelcontextprotocol/server@2.0.0':
-    resolution: {integrity: sha512-YhHWdHfpFMQfd0prsEnxKeS3Qz3ytIGmsS0sth4KDjnacIT7hxk6hXHkJ9KysxlkvTM+WZAtQbbcUhdoP4Hvtw==}
+  '@modelcontextprotocol/server@2.1.0':
+    resolution: {integrity: sha512-FdvwZU5N03O77Suh35JqjAqq5R1ZTEPFtwu6N4BgBq28qrQtrCnpbLL5U2pwYCuE194jAw0xnlOVmIqhfoYuUQ==}
     engines: {node: '>=20'}
 
   '@oxfmt/binding-android-arm-eabi@0.70.0':
@@ -954,8 +954,8 @@ packages:
       - yaml
       - mime-types
 
-  aws-cdk@2.1142.0:
-    resolution: {integrity: sha512-gNOeii+avTJmOwfR8tVgraZ5A2EBC/529EXg7e+yBp8Zl608dAv5CtFRoJt8QoKiruiCwYr4HF6ClNAse/NkSg==}
+  aws-cdk@2.1143.0:
+    resolution: {integrity: sha512-bTbgEmNuN6UMDAyhGFWOAnriafSu7j0cAjaFKRw1/WEs6RE5g062D2v2+YE8Dw6qw7RgNGQPH5Nv47TsK5kZSQ==}
     engines: {node: '>= 18.0.0'}
     hasBin: true
 
@@ -1177,7 +1177,7 @@ snapshots:
 
   '@aws-cdk/asset-node-proxy-agent-v6@2.1.3': {}
 
-  '@aws-cdk/cloud-assembly-schema@54.24.0': {}
+  '@aws-cdk/cloud-assembly-schema@54.25.0': {}
 
   '@aws-lambda-powertools/commons@2.35.0':
     dependencies:
@@ -1307,18 +1307,18 @@ snapshots:
     dependencies:
       hono: 4.13.8
 
-  '@modelcontextprotocol/core@2.0.0':
+  '@modelcontextprotocol/core@2.1.0':
     dependencies:
       zod: 4.6.5
 
-  '@modelcontextprotocol/hono@2.0.0(@modelcontextprotocol/server@2.0.0)(hono@4.13.8)':
+  '@modelcontextprotocol/hono@2.0.1(@modelcontextprotocol/server@2.1.0)(hono@4.13.8)':
     dependencies:
-      '@modelcontextprotocol/server': 2.0.0
+      '@modelcontextprotocol/server': 2.1.0
       hono: 4.13.8
 
-  '@modelcontextprotocol/server@2.0.0':
+  '@modelcontextprotocol/server@2.1.0':
     dependencies:
-      '@modelcontextprotocol/core': 2.0.0
+      '@modelcontextprotocol/core': 2.1.0
       zod: 4.6.5
 
   '@oxfmt/binding-android-arm-eabi@0.70.0':
@@ -1525,10 +1525,10 @@ snapshots:
     dependencies:
       '@aws-cdk/asset-awscli-v1': 2.2.292
       '@aws-cdk/asset-node-proxy-agent-v6': 2.1.3
-      '@aws-cdk/cloud-assembly-schema': 54.24.0
+      '@aws-cdk/cloud-assembly-schema': 54.25.0
       constructs: 10.8.1
 
-  aws-cdk@2.1142.0: {}
+  aws-cdk@2.1143.0: {}
 
   constructs@10.8.1: {}
 
