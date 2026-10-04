@@ -18,7 +18,7 @@
   "dependencies": {
     "@aws-lambda-powertools/logger": "2.35.0",
     "@modelcontextprotocol/server": "2.1.0",
-    "aws-cdk-lib": "2.270.0",
+    "aws-cdk-lib": "2.271.0",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "10.8.1",
     "hono": "4.13.9",
@@ -27,7 +27,7 @@
   "devDependencies": {
     "@hono/node-server": "2.1.1",
     "@types/aws-lambda": "8.10.163",
-    "@types/node": "26.6.2",
+    "@types/node": "26.6.3",
     "aws-cdk": "2.1143.0",
     "esbuild": "0.28.2",
     "oxfmt": "^0.70.0",
