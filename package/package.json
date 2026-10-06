@@ -45,10 +45,10 @@
   },
   "dependencies": {
     "@aws-lambda-powertools/logger": "2.35.0",
-    "@modelcontextprotocol/core": "2.1.0",
+    "@modelcontextprotocol/core": "2.2.0",
     "@modelcontextprotocol/hono": "2.0.1",
-    "@modelcontextprotocol/server": "2.1.0",
-    "hono": "4.13.10",
+    "@modelcontextprotocol/server": "2.2.0",
+    "hono": "4.13.11",
     "zod": "4.6.5"
   },
   "devDependencies": {
