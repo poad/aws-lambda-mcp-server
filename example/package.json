@@ -28,7 +28,7 @@
     "@hono/node-server": "2.1.5",
     "@types/aws-lambda": "8.10.164",
     "@types/node": "26.6.5",
-    "aws-cdk": "2.1146.0",
+    "aws-cdk": "2.1146.1",
     "esbuild": "0.28.2",
     "oxfmt": "^0.74.0",
     "oxlint": "^1.89.0",
