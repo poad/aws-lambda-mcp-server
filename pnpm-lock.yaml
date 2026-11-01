@@ -179,8 +179,8 @@ importers:
         specifier: 2.36.0
         version: 2.36.0
       '@modelcontextprotocol/server':
-        specifier: 2.3.1
-        version: 2.3.1
+        specifier: 2.4.0
+        version: 2.4.0
       aws-cdk-lib:
         specifier: 2.274.0
         version: 2.274.0(constructs@10.8.1)
@@ -191,15 +191,15 @@ importers:
         specifier: 10.8.1
         version: 10.8.1
       hono:
-        specifier: 4.13.13
-        version: 4.13.13
+        specifier: 4.13.14
+        version: 4.13.14
       zod:
         specifier: 4.6.7
         version: 4.6.7
     devDependencies:
       '@hono/node-server':
         specifier: 2.1.5
-        version: 2.1.5(hono@4.13.13)
+        version: 2.1.5(hono@4.13.14)
       '@types/aws-lambda':
         specifier: 8.10.164
         version: 8.10.164
@@ -234,17 +234,17 @@ importers:
         specifier: 2.36.0
         version: 2.36.0
       '@modelcontextprotocol/core':
-        specifier: 2.3.1
-        version: 2.3.1
+        specifier: 2.4.0
+        version: 2.4.0
       '@modelcontextprotocol/hono':
         specifier: 2.0.2
-        version: 2.0.2(@modelcontextprotocol/server@2.3.1)(hono@4.13.13)
+        version: 2.0.2(@modelcontextprotocol/server@2.4.0)(hono@4.13.14)
       '@modelcontextprotocol/server':
-        specifier: 2.3.1
-        version: 2.3.1
+        specifier: 2.4.0
+        version: 2.4.0
       hono:
-        specifier: 4.13.13
-        version: 4.13.13
+        specifier: 4.13.14
+        version: 4.13.14
       zod:
         specifier: 4.6.7
         version: 4.6.7
@@ -516,8 +516,8 @@ packages:
     peerDependencies:
       hono: ^4 || ^5.0.0-0
 
-  '@modelcontextprotocol/core@2.3.1':
-    resolution: {integrity: sha512-laVmIhPGpWi7rG9q+0UigblRN0Hws/Yjlb6qLFtVqryXVLkc4h+yN8z731POD2LnAGQlFe7/tXhUm7Bi0YB91g==}
+  '@modelcontextprotocol/core@2.4.0':
+    resolution: {integrity: sha512-z8QBKqdfXLPzkLQuG4xp8hrVEMm1PZ1IgxMN2sMbJiFiAKOWXnAzogXn2W4aqIBlP1ea6U5yiqVquvUNM1Cj6Q==}
     engines: {node: '>=20'}
 
   '@modelcontextprotocol/hono@2.0.2':
@@ -527,8 +527,8 @@ packages:
       '@modelcontextprotocol/server': ^2.3.0
       hono: ^4.11.4
 
-  '@modelcontextprotocol/server@2.3.1':
-    resolution: {integrity: sha512-e59MfWuSssj6DoQ96JCTqdW1AXT5/XtnTl0WWd6MU1Ka434fFUGGosCLJbGNySDhHGvxQWoRWK137FXYFkYNWw==}
+  '@modelcontextprotocol/server@2.4.0':
+    resolution: {integrity: sha512-rgR9yxSaAJ+bcsi/XroT/S2AfPiIWloXAnrdfYSCms9ivVju0ishu/wW0J21Ho6+ZOR1r7RyeRbjiRuF87ix5Q==}
     engines: {node: '>=20'}
 
   '@oxfmt/binding-android-arm-eabi@0.74.0':
@@ -979,8 +979,8 @@ packages:
     engines: {node: ^8.16.0 || ^10.6.0 || >=11.0.0}
     os: [darwin]
 
-  hono@4.13.13:
-    resolution: {integrity: sha512-CQ46U0ZkAGmbT/4UxdzzGJpacP2IeKgY4a5/tOI9AABbpOMfK739wfDXmv1usCk+3RkKj1hQy4/fjhiwa2xlrA==}
+  hono@4.13.14:
+    resolution: {integrity: sha512-yhRLQ21U6qa9Hsu2N7Qcbh8tE+WKEcoErjIo56LeSGiGXGp9sA7UpE86Ui9uexb61KakiGwuHMn2QdV7w6i6kQ==}
     engines: {node: '>=16.9.0'}
 
   node@runtime:26.13.0:
@@ -1305,22 +1305,22 @@ snapshots:
   '@esbuild/win32-x64@0.28.2':
     optional: true
 
-  '@hono/node-server@2.1.5(hono@4.13.13)':
+  '@hono/node-server@2.1.5(hono@4.13.14)':
     dependencies:
-      hono: 4.13.13
+      hono: 4.13.14
 
-  '@modelcontextprotocol/core@2.3.1':
+  '@modelcontextprotocol/core@2.4.0':
     dependencies:
       zod: 4.6.7
 
-  '@modelcontextprotocol/hono@2.0.2(@modelcontextprotocol/server@2.3.1)(hono@4.13.13)':
+  '@modelcontextprotocol/hono@2.0.2(@modelcontextprotocol/server@2.4.0)(hono@4.13.14)':
     dependencies:
-      '@modelcontextprotocol/server': 2.3.1
-      hono: 4.13.13
+      '@modelcontextprotocol/server': 2.4.0
+      hono: 4.13.14
 
-  '@modelcontextprotocol/server@2.3.1':
+  '@modelcontextprotocol/server@2.4.0':
     dependencies:
-      '@modelcontextprotocol/core': 2.3.1
+      '@modelcontextprotocol/core': 2.4.0
       zod: 4.6.7
 
   '@oxfmt/binding-android-arm-eabi@0.74.0':
@@ -1572,7 +1572,7 @@ snapshots:
   fsevents@2.3.3:
     optional: true
 
-  hono@4.13.13: {}
+  hono@4.13.14: {}
 
   node@runtime:26.13.0: {}
 
