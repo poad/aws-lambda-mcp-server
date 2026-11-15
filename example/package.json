@@ -21,7 +21,7 @@
     "aws-cdk-lib": "2.275.0",
     "aws-lambda-mcp-server": "workspace:*",
     "constructs": "10.8.1",
-    "hono": "4.13.16",
+    "hono": "4.13.17",
     "zod": "4.6.7"
   },
   "devDependencies": {
@@ -30,7 +30,7 @@
     "@types/node": "26.6.6",
     "aws-cdk": "2.1148.0",
     "esbuild": "0.28.2",
-    "oxfmt": "^0.76.0",
+    "oxfmt": "^0.77.0",
     "oxlint": "^1.92.0",
     "oxlint-plugin-awscdk": "^1.0.4",
     "tsx": "4.23.15",
