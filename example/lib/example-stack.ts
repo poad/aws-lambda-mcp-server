@@ -46,7 +46,7 @@ export class ExampleStack extends cdk.Stack {
         sourceMap: true, // ソースマップを有効化（デバッグ用）
         keepNames: true,
         format: cdk.aws_lambda_nodejs.OutputFormat.ESM,
-        target: 'node24', // Target Node.js 24.x
+        target: 'node26', // Target Node.js 26.x
         banner:
           "import { createRequire } from 'module';const require = createRequire(import.meta.url);",
       },

@@ -142,3 +142,4 @@ vite.config.ts.timestamp-*
 
 # 一時ファイル
 pull_request.md
+github_pull_request.md
