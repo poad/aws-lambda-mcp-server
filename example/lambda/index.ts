@@ -30,6 +30,7 @@ const createMcpServer = () => {
   return server;
 };
 const app = createHonoApp(createMcpServer, {
+  // host: '0.0.0.0' は認証・認可を無効にする（開発用。本番では適切な認証を設定してください）
   host: '0.0.0.0',
 });
 
@@ -85,12 +86,17 @@ if (!process.env.AWS_LAMBDA_FUNCTION_NAME) {
       process.on('SIGINT', shutdown);
       process.on('SIGTERM', shutdown);
     } catch (error) {
-      logger.error('サーバーのセットアップに失敗しました:', { error });
+      logger.error('サーバーのセットアップに失敗しました:', {
+        error:
+          error instanceof Error ? { name: error.name, message: error.message } : String(error),
+      });
       process.exit(1);
     }
   };
   main().catch((err) => {
-    logger.error('error', { error: err });
+    logger.error('error', {
+      error: err instanceof Error ? { name: err.name, message: err.message } : String(err),
+    });
     process.exit(1);
   });
 }

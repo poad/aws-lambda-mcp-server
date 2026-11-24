@@ -109,7 +109,7 @@ const closeResources = async (
  */
 const handleRequest = async (
   createMcpServer: () => McpServer,
-  c: Context<Env, '/mcp', BlankInput>,
+  c: Context<BlankEnv, '/mcp', BlankInput>,
 ) => {
   const transport = new WebStandardStreamableHTTPServerTransport({
     sessionIdGenerator: undefined, // セッションIDを生成しない（ステートレスモード）
@@ -144,10 +144,13 @@ const handleRequest = async (
  * Honoアプリケーションを生成し、/mcpエンドポイントでMCPサーバーを提供します。
  *
  * @remarks
- * POST/GET /mcp でMCPリクエストを受け付け、他のHTTPメソッドは405を返します。
+ * POST /mcp でMCPリクエストを受け付けます（MCP 2026-07-28 Streamable HTTP）。
+ * OPTIONS /mcp は CORS プリフライト応答として 200 を返します（Lambda 関数 URL 等での利用を想定）。
+ * その他のHTTPメソッド（GET、DELETE、PUT など）はすべて 405 Method Not Allowed を返し、
+ * Allow ヘッダーに POST を設定します。
  *
  * @param createMcpServer MCPサーバーインスタンスを生成するファクトリ関数
- * @param options `@modelcontextprotocol/hono` パッケージの `createMcpHonoApp()` 関数に関数に渡す options
+ * @param options `@modelcontextprotocol/hono` パッケージの `createMcpHonoApp()` 関数に渡す options
  * @returns Honoアプリケーションインスタンス
  *
  * @example
@@ -165,8 +168,36 @@ export const createHonoApp = (
 ): Hono<Env, BlankSchema, '/'> => {
   const app = createMcpHonoApp(options);
 
-  app.all('/mcp', async (c) => {
+  // MCP メッセージエンドポイント（POST のみ。MCP 2026-07-28 Streamable HTTP 準拠）
+  app.post('/mcp', async (c) => {
     return await handleRequest(createMcpServer, c);
+  });
+
+  // CORS プリフライト（OPTIONS のみ。Lambda 関数 URL 等での利用を想定）
+  app.options('/mcp', (c) => {
+    return c.json({ message: 'OK' }, 200, {
+      Allow: 'POST',
+    });
+  });
+
+  // その他のHTTPメソッドはすべて 405 Method Not Allowed
+  app.all('/mcp', (c) => {
+    return c.json(
+      {
+        jsonrpc: '2.0',
+        error: {
+          code: -32600,
+          message: 'Method Not Allowed',
+        },
+        id: null,
+      },
+      {
+        status: 405,
+        headers: {
+          Allow: 'POST',
+        },
+      },
+    );
   });
 
   return app;
